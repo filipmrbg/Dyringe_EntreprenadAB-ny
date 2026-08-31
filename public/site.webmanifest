@@ -1,0 +1,21 @@
+{
+  "name": "Vision Bygg & Snickeri AB",
+  "short_name": "Vision Bygg",
+  "description": "Kvalitetsarbeten inom bygg, snickeri, renovering, tillbyggnad och totalentreprenad i Umeå och Västerbotten.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ea580c",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
