@@ -62,95 +62,95 @@ export interface SiteImages {
 const images: SiteImages = {
   logo: {
     url: '/logo.png',
-    alt: 'Vision Bygg & Snickeri AB',
+    alt: 'Dyringe Entreprenad AB',
   },
   logoDark: {
     url: '/logo-dark.png',
-    alt: 'Vision Bygg & Snickeri AB',
+    alt: 'Dyringe Entreprenad AB',
   },
 
   hero: {
     background: {
       url: '/hero-main.webp',
-      alt: 'Vision Bygg & Snickeri AB hantverk och snickeri Umeå Västerbotten',
+      alt: 'Dyringe Entreprenad AB grävning, byggnation och betong Örebro',
     },
   },
 
   services: {
     nybyggnation: {
-      url: '/service-smahusbyggnation.webp',
-      alt: 'Nybyggnation, garage och attefallshus i Umeå och Västerbotten',
+      url: '/service-markarbete.webp',
+      alt: 'Grävning och markarbete i Örebro och Närke',
     },
     smahusbyggnation: {
       url: '/service-smahusbyggnation.webp',
-      alt: 'Småhusbyggnation och attefallshus i Umeå',
+      alt: 'Byggnation och snickeri i Örebro',
     },
     renovering: {
-      url: '/service-renovering.webp',
-      alt: 'Totalrenovering, kök och badrum i Umeå',
+      url: '/service-betong.webp',
+      alt: 'Betong och gjutning i Örebro',
     },
     ombyggnation: {
-      url: '/service-ombyggnation.webp',
-      alt: 'Ombyggnation, tak och tillbyggnad i Umeå',
+      url: '/service-markarbete.png',
+      alt: 'Maskintjänster och entreprenad i Örebro',
     },
     totalentreprenad: {
       url: '/service-totalentreprenad.webp',
-      alt: 'Totalentreprenad och byggnation i Umeå',
+      alt: 'Totalentreprenad och markanläggning i Örebro',
     },
   },
 
   gallery: [
     {
       url: '/gallery/gallery-1.jpg',
-      alt: 'Vision Bygg & Snickeri AB snickeriarbete och renovering',
+      alt: 'Dyringe Entreprenad AB markarbete och tomtplanering',
     },
     {
       url: '/gallery/gallery-2.jpg',
-      alt: 'Vision Bygg & Snickeri AB hantverk och interiör',
+      alt: 'Dyringe Entreprenad AB betonggjutning och platta på mark',
     },
     {
       url: '/gallery/gallery-3.jpg',
-      alt: 'Vision Bygg & Snickeri AB kök och renovering',
+      alt: 'Dyringe Entreprenad AB grävarbete och schaktning',
     },
     {
       url: '/gallery/gallery-4.jpg',
-      alt: 'Vision Bygg & Snickeri AB träaltan och utemiljö',
+      alt: 'Dyringe Entreprenad AB byggnation och träkonstruktion',
     },
     {
       url: '/gallery/gallery-5.jpg',
-      alt: 'Vision Bygg & Snickeri AB specialsnickeri och detaljer',
+      alt: 'Dyringe Entreprenad AB maskinentreprenad och grävmaskin',
     },
     {
       url: '/gallery/gallery-6.jpg',
-      alt: 'Vision Bygg & Snickeri AB färdigställt byggprojekt',
+      alt: 'Dyringe Entreprenad AB färdigställt anläggningsprojekt',
     },
   ],
 
   cta: {
     banner: {
       url: '/hero-main.webp',
-      alt: 'Vision Bygg & Snickeri AB projekt',
+      alt: 'Dyringe Entreprenad AB projekt',
     },
     midSection: {
       url: '/hero-main.webp',
-      alt: 'Vision Bygg arbetsplats Umeå',
+      alt: 'Dyringe Entreprenad AB arbetsplats Örebro',
     },
   },
 
   about: {
     hero: {
-      url: '/logo-dark.png',
-      alt: 'Vision Bygg & Snickeri AB',
+      url: '/about.jpg',
+      alt: 'Dyringe Entreprenad AB',
     },
     teamMember: {
       url: '/logo.png',
-      alt: 'Teammedlem Vision Bygg',
+      alt: 'Teammedlem Dyringe Entreprenad AB',
     },
   },
 
   whyChooseUs: {
     url: '/why-choose-us.webp',
-    alt: 'Noggrant hantverk i detalj',
+    alt: 'Noggrant hantverk och entreprenad i detalj',
   },
 
   ideaToResult: {
@@ -162,49 +162,49 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-1.jpg',
-        alt: 'Snickeri och renovering i Umeå',
+        alt: 'Markarbete och tomtplanering i Örebro',
       },
-      title: 'Skräddarsytt Snickeri & Renovering',
-      category: 'Snickeri',
+      title: 'Markarbete & Tomtplanering',
+      category: 'Markarbete',
     },
     {
       image: {
         url: '/gallery/gallery-2.jpg',
-        alt: 'Interiör och finsnickeri i Umeå',
+        alt: 'Gjutning av betongplatta i Örebro',
       },
-      title: 'Interiör & Finsnickeri',
-      category: 'Finsnickeri',
+      title: 'Betongplatta & Grundgjutning',
+      category: 'Betong',
     },
     {
       image: {
         url: '/gallery/gallery-3.jpg',
-        alt: 'Köksrenovering och interiör i Umeå',
+        alt: 'Schaktning och grävning i Örebro',
       },
-      title: 'Köksrenovering & Interiör',
-      category: 'Renovering',
+      title: 'Grävarbete & Schaktning',
+      category: 'Grävning',
     },
     {
       image: {
         url: '/gallery/gallery-4.jpg',
-        alt: 'Trädäck och altanbygge Umeå',
+        alt: 'Byggnation och träkonstruktion i Örebro',
       },
-      title: 'Trädäck, Altan & Uterum',
-      category: 'Tillbyggnad',
+      title: 'Byggnation & Träkonstruktion',
+      category: 'Byggnation',
     },
     {
       image: {
         url: '/gallery/gallery-5.jpg',
-        alt: 'Finsnickeri och platsbyggda lösningar',
+        alt: 'Maskintjänster och grävmaskinist i Örebro',
       },
-      title: 'Finsnickeri & Platsbyggt',
-      category: 'Snickeri',
+      title: 'Maskintjänster & Entreprenad',
+      category: 'Maskintjänster',
     },
     {
       image: {
         url: '/gallery/gallery-6.jpg',
-        alt: 'Totalentreprenad Umeå Västerbotten',
+        alt: 'Färdigställt entreprenadprojekt Örebro',
       },
-      title: 'Totalentreprenad & Ombyggnad',
+      title: 'Färdigställd Entreprenad',
       category: 'Totalentreprenad',
     },
   ],
@@ -213,7 +213,7 @@ const images: SiteImages = {
     markarbete: {
       hero: {
         url: '/service-markarbete.webp',
-        alt: 'Markarbete och schaktning',
+        alt: 'Grävning, schaktning och markarbete',
       },
       section1: {
         url: '/service-markarbete.webp',
@@ -221,17 +221,17 @@ const images: SiteImages = {
       },
       section2: {
         url: '/hero-main.webp',
-        alt: 'Arbetsplats Umeå',
+        alt: 'Arbetsplats Örebro',
       },
     },
     dranering: {
       hero: {
         url: '/service-dranering.webp',
-        alt: 'Dränering av husgrund',
+        alt: 'Dränering och ledningsarbete',
       },
       section1: {
         url: '/service-dranering.webp',
-        alt: 'Fuktskydd och dränering',
+        alt: 'Fuktskydd och dräneringsarbete',
       },
       section2: {
         url: '/hero-main.webp',
@@ -245,7 +245,7 @@ const images: SiteImages = {
       },
       section1: {
         url: '/service-betong.webp',
-        alt: 'Stenläggning och armering',
+        alt: 'Armering och betonggjutning',
       },
       section2: {
         url: '/hero-main.webp',

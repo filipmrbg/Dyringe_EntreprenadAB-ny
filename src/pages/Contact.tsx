@@ -22,11 +22,11 @@ const faqItems = [
   },
   {
     question: 'Vilka områden är ert huvudsakliga upptagningsområde?',
-    answer: 'Vi har vår bas i Umeå och utför uppdrag i Umeå, Holmsund, Hörnefors, Sävar, Vännäs och hela Västerbotten.',
+    answer: 'Vi har vår bas i Örebro och utför uppdrag i Örebro, Kumla, Hallsberg, Närke och närliggande områden.',
   },
   {
     question: 'Kan jag boka ett kostnadsfritt platsbesök?',
-    answer: 'Självklart! Kontakta oss via formuläret eller ring oss på 070-608 99 55 så bokar vi in en tid som passar dig.',
+    answer: 'Självklart! Kontakta oss via formuläret eller ring oss på 076-112 91 06 så bokar vi in en tid som passar dig.',
   },
 ];
 
@@ -57,8 +57,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) 
 
 export default function Contact() {
   usePageTitle(
-    'Kontakta Vision Bygg & Snickeri AB | Umeå & Västerbotten',
-    'Kontakta Vision Bygg & Snickeri AB i Umeå. Vi utför allt inom snickeri, renovering, tillbyggnad och totalentreprenad i Umeå med omnejd. Ring 070-608 99 55.'
+    'Kontakta Dyringe Entreprenad AB | Örebro',
+    'Kontakta Dyringe Entreprenad AB i Örebro. Vi utför allt inom grävning, schaktning, markarbete, byggnation och betong i Örebro med omnejd. Ring 076-112 91 06.'
   );
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -71,7 +71,7 @@ export default function Contact() {
       {/* ── SECTION A: HERO ───────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(https://cdn.midjourney.com/6e079fd3-e098-4621-94e1-2dca52b0df2a/0_0.png)',
+        backgroundImage: 'url(/service-markarbete.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
         paddingTop: '150px',
@@ -124,7 +124,7 @@ export default function Contact() {
                 Så når du oss
               </h2>
               <p style={{ color: 'var(--color-gray-600)', fontSize: '1rem', lineHeight: 1.8, margin: 0 }}>
-                Du kan nå oss via formuläret, telefon eller e-post. Oavsett om det gäller bygg, finsnickeri, renovering, tillbyggnad eller totalentreprenad hjälper vi dig gärna.
+                Du kan nå oss via formuläret, telefon eller e-post. Oavsett om det gäller grävning, tomtplanering, markarbete, byggnation, betonggjutning eller maskintjänster hjälper vi dig gärna.
               </p>
 
               <div style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -147,12 +147,12 @@ export default function Contact() {
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                       <a
-                        href="tel:0706089955"
+                        href="tel:0761129106"
                         style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                         onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                         onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                       >
-                        070-608 99 55
+                        076-112 91 06
                       </a>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                       Plats & Område
                     </p>
                     <p style={{ margin: 0, color: 'var(--color-gray-600)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                      Bas i Umeå • Holmsund, Hörnefors, Sävar, Vännäs & hela Västerbotten
+                      Bas i Örebro • Kumla, Hallsberg, Närke & omnejd
                     </p>
                   </div>
                 </div>
@@ -199,12 +199,12 @@ export default function Contact() {
                       E-post
                     </p>
                     <a
-                      href="mailto:visionbygg.nu@gmail.com"
+                      href="mailto:dyringe@outlook.com"
                       style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                       onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                       onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                     >
-                      visionbygg.nu@gmail.com
+                      dyringe@outlook.com
                     </a>
                   </div>
                 </div>

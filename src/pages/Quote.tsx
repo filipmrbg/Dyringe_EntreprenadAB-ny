@@ -53,8 +53,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | 
 
 export default function Quote() {
   usePageTitle(
-    'Begär offert | Vision Bygg & Snickeri AB',
-    'Beskriv ditt projekt och begär en kostnadsfri offert för bygg, snickeri, renovering, tillbyggnad, altan eller totalentreprenad i Umeå med omnejd.'
+    'Begär offert | Dyringe Entreprenad AB',
+    'Beskriv ditt projekt och begär en kostnadsfri offert för grävning, markarbete, byggnation, betonggjutning eller maskintjänster i Örebro med omnejd.'
   );
   const [name, setName]       = useState('');
   const [email, setEmail]     = useState('');
@@ -68,7 +68,7 @@ export default function Quote() {
       {/* ── SECTION A: HERO ───────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(https://cdn.midjourney.com/6e079fd3-e098-4621-94e1-2dca52b0df2a/0_0.png)',
+        backgroundImage: 'url(/service-markarbete.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
         paddingTop: '140px',
@@ -189,10 +189,10 @@ export default function Quote() {
                     onBlur={blurInput}
                   >
                     <option value="">Välj tjänst...</option>
-                    <option value="nybyggnation">Nybyggnation</option>
-                    <option value="renovering">Renovering</option>
-                    <option value="tillbyggnad">Tillbyggnad</option>
-                    <option value="totalentreprenad">Totalentreprenad</option>
+                    <option value="gravning">Grävning</option>
+                    <option value="byggnation">Byggnation</option>
+                    <option value="betong">Betong</option>
+                    <option value="maskinforare">Maskinförare</option>
                     <option value="annat">Annat projekt</option>
                   </select>
 

@@ -12,29 +12,29 @@ const container: React.CSSProperties = {
 
 const teamMembers = [
   {
-    role: 'Ägare & Projektledare / Finsnickare',
-    name: 'Vision Bygg Team',
-    initials: 'VB',
-    description: 'Leder Vision Bygg & Snickeri AB med ett brinnande engagemang för hållbart hantverk, personlig service och högsta precision i Umeå.',
+    role: 'Ägare & Projektledare / Maskinförare',
+    name: 'Linus Eriksson',
+    initials: 'LE',
+    description: 'Leder Dyringe Entreprenad AB med mångårig erfarenhet inom grävning, anläggning, betong och maskintjänster i Örebro.',
   },
   {
-    role: 'Yrkeshantverkare & Finsnickare',
+    role: 'Yrkesförare & Maskinist',
     name: 'Johan S.',
-    initials: 'J',
-    description: 'Mångårig erfarenhet inom stomresning, köksmontering, altanbyggnationer och interiöra snickerier.',
+    initials: 'JS',
+    description: 'Specialist på schaktning, tomtplanering, markberedning och precisionsgrävning med moderna maskiner.',
   },
   {
-    role: 'Yrkeshantverkare & Montör',
+    role: 'Hantverkare & Betongarbetare',
     name: 'Erik L.',
-    initials: 'E',
-    description: 'Specialist på renoveringar, golvläggning, fönsterbyten och teknisk montering med fullt fokus på finish.',
+    initials: 'EL',
+    description: 'Erfaren inom betonggjutning, platta på mark, armering och träkonstruktioner med fokus på hållbarhet.',
   },
 ];
 
 export default function About() {
   usePageTitle(
-    'Om Vision Bygg & Snickeri AB | Snickeri & Renovering i Umeå',
-    'Läs mer om Vision Bygg & Snickeri AB. Vi utför allt inom snickeri, renovering, tillbyggnad och totalentreprenad med kvalitet och noggrannhet i Umeå med omnejd.'
+    'Om Dyringe Entreprenad AB | Grävning, Byggnation & Betong i Örebro',
+    'Läs mer om Dyringe Entreprenad AB. Vi utför allt inom grävning, schaktning, markarbete, byggnation och betonggjutning i Örebro med omnejd.'
   );
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -42,7 +42,7 @@ export default function About() {
       {/* ── SECTION A: HERO HEADER ────────────────────────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260821_183454_7eefa775-dd9b-4589-a201-64ab1b467991.png)',
+        backgroundImage: 'url(/service-markarbete.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
         paddingTop: '150px',
@@ -61,12 +61,12 @@ export default function About() {
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
               }}>
-                Om Vision Bygg & Snickeri AB
+                Om Dyringe Entreprenad AB
               </h1>
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.08rem', margin: '0 auto', maxWidth: '640px', lineHeight: 1.6 }}>
-                Professionellt hantverk och snickeri – från noggrann planering till färdigt resultat i Umeå och Västerbotten.
+                Professionell entreprenad och maskintjänster – från noggrann planering till färdigställt mark och byggprojekt i Örebro med omnejd.
               </p>
             </ScrollReveal>
           </div>
@@ -97,8 +97,8 @@ export default function About() {
                 boxShadow: '0 12px 32px rgba(0,0,0,0.08)',
               }}>
                 <img
-                  src={images.about.hero.url || '/logo-dark.png'}
-                  alt="Vision Bygg & Snickeri AB"
+                  src={images.about.hero.url || '/about.jpg'}
+                  alt="Dyringe Entreprenad AB"
                   loading="eager"
                   decoding="async"
                   style={{
@@ -123,7 +123,7 @@ export default function About() {
                   letterSpacing: '-0.03em',
                   margin: '0 0 20px 0',
                 }}>
-                  Professionellt hantverk med passion, precision och trygghet
+                  Professionell entreprenad med passion, precision och trygghet
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="fade-up" delay={100}>
@@ -135,7 +135,7 @@ export default function About() {
                     margin: '0 0 20px 0',
                     fontWeight: 500,
                   }}>
-                    Vision Bygg & Snickeri AB erbjuder ett komplett utbud av tjänster inom bygg, snickeri, renovering, tillbyggnad och totalentreprenad. Med bas i Umeå verkar vi över hela Västerbotten för både privatpersoner och företag.
+                    Dyringe Entreprenad AB erbjuder ett komplett utbud av tjänster inom grävning, tomtplanering, markarbete, byggnation, betonggjutning och maskintjänster. Med bas i Örebro verkar vi i hela Örebroregionen för både privatpersoner, fastighetsägare och företag.
                   </p>
                   
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-text-dark)', margin: '28px 0 12px 0' }}>
@@ -147,7 +147,7 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 16px 0',
                   }}>
-                    Vårt mål är enkelt: att förverkliga dina byggdrömmar med högsta hantverksmässiga kvalitet, god kommunikation och trygga garantier. Vi hanterar både mindre finsnickerier och större helhetsentreprenader med samma höga engagemang.
+                    Vårt mål är enkelt: att leverera mark och byggprojekt med högsta tekniska kvalitet, god dialog och trygga garantier. Vi hanterar både mindre tomtjusteringar och större mark- och grundentreprenader med samma höga engagemang.
                   </p>
                   <p style={{
                     color: 'var(--color-gray-600)',
@@ -155,7 +155,7 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 24px 0',
                   }}>
-                    När du anlitar Vision Bygg & Snickeri AB får du en pålitlig kontaktperson genom hela resan. Vi sätter stor ära i att hålla utlovade tider, lämna snyggt och städat efter oss samt leverera resultat som håller i generationer.
+                    När du anlitar Dyringe Entreprenad AB får du en pålitlig och erfaren partner genom hela resan. Vi sätter stor ära i att hålla utlovade tidsramar, lämna snyggt och städat efter oss samt leverera resultat som står emot tidens tand.
                   </p>
 
                   {/* Founder Quote Card */}
@@ -174,7 +174,7 @@ export default function About() {
                       lineHeight: 1.7,
                       margin: '0 0 10px 0',
                     }}>
-                      "Vi utför varje bygg och snickeriprojekt med största yrkesstolthet och omsorg för detaljerna. Med personlig service, fasta priser och hög kvalitet ser vi till att dina visioner blir verklighet precis som du önskat."
+                      "Vi utför varje gräv-, mark- och byggprojekt med största yrkesstolthet och precision. Med personlig service, moderna maskiner och fasta priser ser vi till att ditt projekt genomförs tryggt och effektivt."
                     </p>
                     <span style={{
                       color: 'var(--color-primary)',
@@ -182,7 +182,7 @@ export default function About() {
                       fontSize: '0.9rem',
                       display: 'block',
                     }}>
-                      Vision Bygg & Snickeri AB i Umeå
+                      Linus Eriksson – Dyringe Entreprenad AB
                     </span>
                   </div>
 
@@ -220,7 +220,7 @@ export default function About() {
                 maxWidth: '580px',
                 margin: '0 auto',
               }}>
-                Erfarna och engagerade hantverkare som levererar kvalitet och noggrannhet i Umeå med omnejd.
+                Erfarna och engagerade maskinförare och entreprenörer som levererar kvalitet och noggrannhet i Örebro med omnejd.
               </p>
             </ScrollReveal>
           </div>

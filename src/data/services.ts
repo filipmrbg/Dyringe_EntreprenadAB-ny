@@ -34,118 +34,122 @@ export interface ServiceItem {
 
 export const services: ServiceItem[] = [
   {
-    slug: 'nybyggnation',
-    title: 'Nybyggnation',
-    shortDescription: 'Kundanpassade attefallshus, garage, förråd och fritidsboenden byggda i lösvirke från stabil grund till färdigt tak.',
-    heroText: 'Förverkliga ditt nybygge i Umeå och Västerbotten – från mark och stomme till färdigt hus.',
-    detailedDescription: `Vill du bygga ett attefallshus, ett rymligt garage eller ett nytt fritidsboende? Hos Vision Bygg & Snickeri AB bygger vi i lösvirke efter dina exakta önskemål och mått.
+    slug: 'gravning',
+    title: 'Grävning',
+    shortDescription: 'Professionella schaktarbeten, tomtplanering, grundgrävning, dränering och ledningsarbeten i Örebro med omnejd.',
+    heroText: 'Effektiva gräv och markarbeten med precision för trygga grunder och hållbara markytor.',
+    detailedDescription: `Planerar du ett markarbete, dränering av husgrund eller schaktning inför nybyggnation? Dyringe Entreprenad AB utför alla typer av grävarbeten med moderna maskiner och hög precision.
 
-Vi hjälper dig från idé till nyckelfärdigt bygge med stabil grund, täta konstruktioner och energieffektiva lösningar anpassade för det svenska klimatet.`,
+Vi hjälper både privatpersoner, företag och fastighetsägare i Örebro med allt från tomtplanering och finplanering till kabelgrävning, vatten och avlopp samt fuktskyddande dränering.`,
+    heroImage: '/service-markarbete.webp',
+    image: '/service-markarbete.webp',
+    href: '/tjanster#gravning',
+    tag: 'Grävning',
+    badge: 'Precision & Erfarenhet',
+    highlights: [
+      'Schaktning och tomtplanering',
+      'Grundgrävning inför gjutning och nybygge',
+      'Husdränering och fuktskydd',
+      'Kabel och ledningsgrävning',
+    ],
+    faq: [
+      {
+        question: 'Hur snabbt kan ni påbörja ett grävarbete?',
+        answer: 'Mindre grävarbeten kan vi oftast påbörja inom 1–2 veckor beroende på säsong och maskinbokning.',
+      },
+      {
+        question: 'Utför ni dränering av befintliga husgrunder?',
+        answer: 'Ja, vi utför kompletta dräneringar med godkända isoler och fuktskyddssystem som skyddar fastigheten mot markfukt.',
+      },
+    ],
+  },
+  {
+    slug: 'byggnation',
+    title: 'Byggnation',
+    shortDescription: 'Kundanpassade byggprojekt, garage, attefallshus, altaner och träkonstruktioner med gedigen kvalitet och finish.',
+    heroText: 'Kvalitativ byggnation och snickeri anpassat efter dina visioner och behov.',
+    detailedDescription: `Söker du en pålitlig byggare för att uppföra ett garage, attefallshus, utbyggnad eller ett rejält trädäck? Dyringe Entreprenad AB utför kundanpassade byggnationer med starkt fokus på hållbarhet, funktion och finish.
+
+Vi tar hand om hela byggprocessen från gjuten grund och regelstomme till färdigställd fasad och tak. Som privatperson kan du självklart nyttja 30 % ROT avdrag på arbetskostnaden.`,
     heroImage: '/service-smahusbyggnation.webp',
     image: '/service-smahusbyggnation.webp',
-    href: '/tjanster#nybyggnation',
-    tag: 'Nybyggnation',
-    badge: 'Lösvirkesbygge',
-    highlights: [
-      'Skräddarsydda attefallshus och garage',
-      'Fritidshus och förrådsbyggnader',
-      'Gediget hantverk i lösvirke från grund till tak',
-      'Hjälp med ritningar och bygglovsunderlag',
-    ],
-    faq: [
-      {
-        question: 'Hur lång tid tar ett attefallshus eller garage?',
-        answer: 'Ett nyckelfärdigt attefallshus eller garage tar vanligtvis mellan 4 och 8 veckor från byggstart till färdigställande.',
-      },
-      {
-        question: 'Hjälper ni till med bygglov och anmälan?',
-        answer: 'Ja, vi bistår med kompletta ritningsunderlag för bygglov eller anmälan till kommunen.',
-      },
-    ],
-  },
-  {
-    slug: 'renovering',
-    title: 'Renovering',
-    shortDescription: 'Gediget hantverk inom kök, badrum, golvläggning och fönsterbyten med fullt fokus på finish och kvalitet.',
-    heroText: 'Förvandla ditt hem med noggrant hantverk och professionell renovering i Umeå med omnejd.',
-    detailedDescription: `Planerar du att renovera köket, badrummet eller göra en genomgripande renovering av hela bostaden? Vision Bygg & Snickeri AB hjälper dig genom hela processen med stor yrkesstolthet.
-
-Vi utför allt från köksmontage och certifierade våtrumsarbeten till golvläggning, fönsterbyten och specialsnickerier. Som privatperson nyttjar du 30 % ROT avdrag direkt på fakturan.`,
-    heroImage: '/service-renovering.webp',
-    image: '/service-renovering.webp',
-    href: '/tjanster#renovering',
-    tag: 'Renovering',
+    href: '/tjanster#byggnation',
+    tag: 'Byggnation',
     badge: 'ROT avdrag 30%',
     highlights: [
-      'Köksrenovering och montage',
-      'Badrum och certifierade våtrum',
-      'Golvläggning och finsnickeri',
-      'Fönster och dörrbyten',
+      'Garage, attefallshus och förråd',
+      'Altaner, trädäck och staket',
+      'Tillbyggnader och träkonstruktioner',
+      'Gediget hantverk med fasta priser',
     ],
     faq: [
       {
-        question: 'Hur fungerar ROT avdraget vid renovering?',
-        answer: 'Som privatperson kan du dra av 30 % av arbetskostnaden upp till 50 000 kr per person och år. Vi sköter all administration direkt med Skatteverket och drar beloppet på fakturan.',
+        question: 'Hur fungerar ROT avdraget vid byggnation?',
+        answer: 'Vid ombyggnad och tillbyggnad på befintlig bostad drar vi av 30 % av arbetskostnaden direkt på fakturan och sköter all administration med Skatteverket.',
       },
       {
-        question: 'Kan man bo kvar under renoveringstiden?',
-        answer: 'Vid mindre renoveringar går det alldeles utmärkt. Vid större projekt planerar vi arbetet i etapper så att din vardag påverkas så lite som möjligt.',
+        question: 'Hjälper ni till med underlag inför bygglov?',
+        answer: 'Ja, vi bistår gärna med rådgivning och måttunderlag inför din bygglovsansökan eller anmälan.',
       },
     ],
   },
   {
-    slug: 'tillbyggnad',
-    title: 'Tillbyggnad',
-    shortDescription: 'Fler kvadratmeter boyta, inglasade uterum, rymliga altaner och taklyft anpassade efter husets arkitektur.',
-    heroText: 'Skapa mer plats att leva på med kundanpassade tillbyggnader och altaner i Umeå med omnejd.',
-    detailedDescription: `Behöver du större boyta, ett nytt sovrum eller en rymlig altan? En genomtänkt tillbyggnad är det bästa sättet att öka både trivsel och fastighetsvärde.
+    slug: 'betong',
+    title: 'Betong',
+    shortDescription: 'Gjutning av betongplatta på mark, armering, socklar, stödmurar och formgjutning för villor, garage och industri.',
+    heroText: 'Stabila och hållbara betonggrunder gjutna med millimeterprecision.',
+    detailedDescription: `En stabil betonggrund är nyckeln till ett lyckat bygge. Dyringe Entreprenad AB utför gjutning av platta på mark för villor, fritidshus, garage och industrilokaler i Örebro med omnejd.
 
-Vi bygger till villor och fritidshus med nyckelfärdiga lösningar som harmonierar med husets befintliga stil och arkitektur.`,
-    heroImage: '/service-ombyggnation.webp',
-    image: '/service-ombyggnation.webp',
-    href: '/tjanster#tillbyggnad',
-    tag: 'Tillbyggnad',
-    badge: 'Kundanpassat',
+Vi ombesörjer hela kedjan: schaktning, bärlager, isolering, golvvärmeläggning, armering och betonggjutning med professionell glättning för ett perfekt plant och slitstarkt golv.`,
+    heroImage: '/service-betong.webp',
+    image: '/service-betong.webp',
+    href: '/tjanster#betong',
+    tag: 'Betong',
+    badge: 'Stabila Grunder',
     highlights: [
-      'Utbyggnad av villa och fritidshus',
-      'Altaner, trädäck och verandor',
-      'Inglasade uterum',
-      'Taklyft och fasadarbeten',
+      'Platta på mark för villa och garage',
+      'Armering och isolering',
+      'Gjutning av stödmurar och socklar',
+      'Professionell glättning och finish',
     ],
     faq: [
       {
-        question: 'Krävs det bygglov för tillbyggnad?',
-        answer: 'Mindre tillbyggnader upp till 15 kvm (attefallsutbyggnad) och altaner under vissa höjder kan ofta utföras utan bygglov. Vi hjälper dig med alla nödvändiga handlingar.',
+        question: 'Vad krävs innan man kan gjuta en betongplatta?',
+        answer: 'Marken behöver schaktas ur, fyllas med dränerande bärlager och packas ordentligt innan kantelement, isolering, armering och eventuell golvvärme monteras.',
+      },
+      {
+        question: 'Gjuter ni både för privatpersoner och företag?',
+        answer: 'Ja, vi åtar oss betonggjutningar för allt från privata garage och husgrunder till kommersiella maskinhallar.',
       },
     ],
   },
   {
-    slug: 'totalentreprenad',
-    title: 'Totalentreprenad',
-    shortDescription: 'Ett samlat helhetsansvar från planering och samordning till godkänt och nyckelfärdigt resultat.',
-    heroText: 'Bekymmersfritt byggande – en enda kontaktperson för alla hantverkare.',
-    detailedDescription: `Med totalentreprenad från Vision Bygg & Snickeri AB slipper du samordna snickare, elektriker, rörmokare och målare på egen hand.
+    slug: 'maskinforare',
+    title: 'Maskinförare',
+    shortDescription: 'Kompletta entreprenadtjänster och yrkesskickliga maskinförare för anläggning, materialflytt och markberedning.',
+    heroText: 'Erfarna maskinförare och moderna maskiner för krävande entreprenaduppdrag.',
+    detailedDescription: `Behöver du anlita en erfaren maskinförare eller boka maskintjänster för ditt entreprenadprojekt? Dyringe Entreprenad AB erbjuder professionell maskinkörning med hög kapacitet och flexibilitet.
 
-Vi är din personliga kontaktperson genom hela projektet. Vi tar det fulla ansvaret för planering, kvalitet och genomförande med fasta priser och tydliga tidsplaner.`,
+Med bred kompetens inom grävning, planering och materialhantering ser vi till att dina markprojekt flyter på effektivt och enligt tidsplan. Vi arbetar snabbt, säkert och med full hänsyn till omgivningen.`,
     heroImage: '/service-totalentreprenad.webp',
     image: '/service-totalentreprenad.webp',
-    href: '/tjanster#totalentreprenad',
-    tag: 'Totalentreprenad',
-    badge: '100% Trygghet',
+    href: '/tjanster#maskinforare',
+    tag: 'Maskinförare',
+    badge: 'Kvalitet & Erfarenhet',
     highlights: [
-      'En enda personlig kontaktperson',
-      'Noggrann planering och projektering',
-      'Full samordning av el, VVS, snickeri och måleri',
-      'Tydlig tidsplan och fast pris',
+      'Erfarna och certifierade maskinförare',
+      'Moderna grävmaskiner och utrustning',
+      'Materialhantering och markberedning',
+      'Flexibla upplägg per timme eller fast pris',
     ],
     faq: [
       {
-        question: 'Vad innebär totalentreprenad för mig som beställare?',
-        answer: 'Du har endast ett avtal och en kontaktperson. Vi leder och ansvarar för alla yrkesgrupper så att hela bygget flyter på tryggt och enligt tidsplan.',
+        question: 'Arbetar ni på löpande räkning eller fast pris?',
+        answer: 'Vi erbjuder både fasta offerter för hela entreprenader och löpande timdebitering för maskintjänster, beroende på vad som passar ditt projekt bäst.',
       },
       {
-        question: 'Erbjuder ni kostnadsfri rådgivning och offert?',
-        answer: 'Ja, vi går igenom ditt projekt, gör platsbesök och lämnar ett detaljerat prisförslag helt utan förbindelser.',
+        question: 'Vilka geografiska områden täcker ni?',
+        answer: 'Vi utgår från Örebro och utför uppdrag i hela Örebroregionen, inklusive Kumla, Hallsberg, Lekeberg och omnejd.',
       },
     ],
   },

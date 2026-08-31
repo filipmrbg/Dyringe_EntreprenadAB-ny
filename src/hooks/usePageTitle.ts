@@ -9,7 +9,7 @@ export function usePageTitle(title: string, description?: string) {
     document.title = title;
 
     // 2. Update Description
-    const defaultDesc = "Vision Bygg & Snickeri AB utför kvalitetsarbeten inom bygg, snickeri, renovering, tillbyggnad och totalentreprenad i Umeå med omnejd.";
+    const defaultDesc = "Dyringe Entreprenad AB utför professionella entreprenadarbeten inom grävning, markarbete, byggnation, betong och maskintjänster i Örebro med omnejd.";
     const activeDesc = description || defaultDesc;
     
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -39,9 +39,9 @@ export function usePageTitle(title: string, description?: string) {
     // 5. Update Canonical Link & Absolute URL
     const origin = typeof window !== 'undefined' && window.location.origin.startsWith('http')
       ? window.location.origin
-      : 'https://vision-bygg-snickeri-ab.vercel.app';
+      : 'https://dyringe-entreprenad.se';
     const absoluteUrl = `${origin}${pathname === '/' ? '' : pathname}`;
-    const ogImageUrl = 'https://i.imgur.com/afTMnt8.png';
+    const ogImageUrl = `${origin}/og-image.png`;
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {

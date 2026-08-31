@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://visionbyggab.se/</loc>
-    <lastmod>2026-08-26</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://dyringeentreprenad.se/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://visionbyggab.se/tjanster</loc>
-    <lastmod>2026-08-26</lastmod>
+    <loc>https://dyringeentreprenad.se/tjanster</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://visionbyggab.se/om-oss</loc>
-    <lastmod>2026-08-26</lastmod>
+    <loc>https://dyringeentreprenad.se/om-oss</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://visionbyggab.se/kontakt</loc>
-    <lastmod>2026-08-26</lastmod>
+    <loc>https://dyringeentreprenad.se/kontakt</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://visionbyggab.se/offert</loc>
-    <lastmod>2026-08-26</lastmod>
+    <loc>https://dyringeentreprenad.se/offert</loc>
+    <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>

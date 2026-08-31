@@ -134,13 +134,16 @@ export function TotalentreprenadIcon({ color = '#c28447', size = 38, style }: Ic
 
 export function ServiceIcon({ type, color, size = 38 }: { type: string; color?: string; size?: number }) {
   switch (type) {
+    case 'gravning':
+    case 'gravning-markarbete':
+      return <RenoveringIcon color={color} size={size} />;
+    case 'byggnation':
     case 'nybyggnation':
       return <NybyggnationIcon color={color} size={size} />;
-    case 'renovering':
-      return <RenoveringIcon color={color} size={size} />;
-    case 'tillbyggnad':
-    case 'ombyggnation':
+    case 'betong':
       return <TillbyggnadIcon color={color} size={size} />;
+    case 'maskinforare':
+    case 'maskintjanster':
     case 'totalentreprenad':
       return <TotalentreprenadIcon color={color} size={size} />;
     default:

@@ -14,8 +14,8 @@ const container: React.CSSProperties = {
 
 export default function ServicesOverview() {
   usePageTitle(
-    'Våra Tjänster | Vision Bygg & Snickeri AB Umeå',
-    'Utforska våra tjänster: Bygg, snickeri, renovering, tillbyggnad, altaner och totalentreprenad i Umeå med omnejd.'
+    'Våra Tjänster | Dyringe Entreprenad AB Örebro',
+    'Utforska våra entreprenadtjänster: Grävning, markarbete, byggnation, betonggjutning och maskintjänster i Örebro med omnejd.'
   );
 
   const { hash } = useLocation();
@@ -23,7 +23,6 @@ export default function ServicesOverview() {
   useEffect(() => {
     if (hash) {
       let id = hash.replace('#', '');
-      if (id === 'ombyggnation') id = 'tillbyggnad';
       const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
@@ -53,7 +52,7 @@ export default function ServicesOverview() {
       {/* ── HERO HEADER ──────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url("https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_3G5LlmMYORSdAk8SxzXrK2S0Is5%2Fhf_20260821_184821_7f998fbb-7324-4488-8afb-075158c654a2.png&w=1920&q=85")',
+        backgroundImage: 'url(/service-markarbete.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 45%',
         paddingTop: '140px',
@@ -83,7 +82,7 @@ export default function ServicesOverview() {
               margin: '0 auto',
               lineHeight: 1.65,
             }}>
-              Vision Bygg & Snickeri AB erbjuder gedigna hantverkstjänster inom bygg, snickeri, renovering och tillbyggnad i Umeå med omnejd.
+              Dyringe Entreprenad AB erbjuder professionella entreprenadtjänster inom grävning, markarbete, byggnation, betong och maskintjänster i Örebro med omnejd.
             </p>
           </ScrollReveal>
         </div>

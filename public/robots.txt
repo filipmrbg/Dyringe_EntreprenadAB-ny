@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://visionbyggab.se/sitemap.xml
+Sitemap: https://dyringeentreprenad.se/sitemap.xml

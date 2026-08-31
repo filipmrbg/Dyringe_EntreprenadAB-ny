@@ -1,17 +1,16 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import images from '../data/images';
 
 const serviceLinks = [
-  { label: 'Nybyggnation', href: '/tjanster#nybyggnation' },
-  { label: 'Renovering', href: '/tjanster#renovering' },
-  { label: 'Tillbyggnad', href: '/tjanster#tillbyggnad' },
-  { label: 'Totalentreprenad', href: '/tjanster#totalentreprenad' },
+  { label: 'Grävning', href: '/tjanster#gravning' },
+  { label: 'Byggnation', href: '/tjanster#byggnation' },
+  { label: 'Betong', href: '/tjanster#betong' },
+  { label: 'Maskinförare', href: '/tjanster#maskinforare' },
 ];
 
 const socialIcons = [
-  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/visionbyggab/' },
-  { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61572219137307&locale=sv_SE#' },
+  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/dyringe_entreprenadab/' },
 ];
 
 export default function Footer() {
@@ -57,7 +56,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ color: 'var(--color-gray-600)', fontSize: '0.9rem', lineHeight: 1.7, margin: '0 0 20px 0' }}>
-              Vision Bygg & Snickeri AB erbjuder professionella bygg och snickeritjänster med högsta kvalitet och noggrannhet i Umeå med omnejd.
+              Dyringe Entreprenad AB erbjuder professionella entreprenadtjänster inom grävning, byggnation, betong och maskinförare med högsta kvalitet och noggrannhet i Örebro med omnejd.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {socialIcons.map(({ Icon, label, href }) => (
@@ -130,23 +129,23 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.95rem' }}>
 
               <a
-                href="mailto:visionbygg.nu@gmail.com"
+                href="mailto:dyringe@outlook.com"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Mail size={16} strokeWidth={2} />
                 </div>
-                <span>visionbygg.nu@gmail.com</span>
+                <span>dyringe@outlook.com</span>
               </a>
 
               <a
-                href="tel:0706089955"
+                href="tel:0761129106"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Phone size={16} strokeWidth={2} />
                 </div>
-                <span>070-608 99 55</span>
+                <span>076-112 91 06</span>
               </a>
 
               <div
@@ -155,7 +154,7 @@ export default function Footer() {
                 <div className="footer-contact-icon">
                   <MapPin size={16} strokeWidth={2} />
                 </div>
-                <span>Umeå • Holmsund • Hörnefors • Västerbotten</span>
+                <span>Örebro • Kumla • Hallsberg • Närke</span>
               </div>
             </div>
           </div>
@@ -177,7 +176,7 @@ export default function Footer() {
           }}
         >
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', color: 'var(--color-gray-600)', fontSize: '0.875rem', flexWrap: 'wrap' }}>
-            <span>© 2026 - Vision Bygg & Snickeri AB</span>
+            <span>© 2026 - Dyringe Entreprenad AB</span>
           </div>
         </div>
       </div>
