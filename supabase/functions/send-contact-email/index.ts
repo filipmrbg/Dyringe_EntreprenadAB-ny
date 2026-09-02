@@ -6,7 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
-const RECIPIENT_EMAIL = "f.bjorgaas@gmail.com";
+const RECIPIENT_EMAIL = "dyringe@outlook.com";
 
 function formatSwedishDateTime(date: Date): string {
   const months = [
@@ -47,6 +47,7 @@ function buildEmailHtml(
   const safeDateTime = escapeHtml(dateTime);
   const safeId = escapeHtml(submissionId);
 
+  // Email template for contact/quote submissions
   return `<!DOCTYPE html>
 <html lang="sv">
 <head>
