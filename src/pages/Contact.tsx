@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MapPin, Mail, Send } from 'lucide-react';
+import { Phone, MapPin, Mail, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import FAQAccordion from '../components/FAQAccordion';
 import CTABanner from '../components/CTABanner';
@@ -65,6 +65,44 @@ export default function Contact() {
   const [phone, setPhone]     = useState('');
   const [service, setService] = useState('');
   const [message, setMessage] = useState('');
+  const [status, setStatus]   = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({ name, email, phone, message }),
+        },
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Något gick fel.');
+      }
+
+      setStatus('success');
+      setName('');
+      setEmail('');
+      setPhone('');
+      setService('');
+      setMessage('');
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg(err instanceof Error ? err.message : 'Ett oväntat fel uppstod.');
+    }
+  };
 
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -231,7 +269,43 @@ export default function Contact() {
                   Fyll i dina uppgifter
                 </h2>
 
-                <form onSubmit={e => e.preventDefault()}>
+                <form onSubmit={handleSubmit}>
+
+                  {status === 'success' && (
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '16px',
+                      background: 'rgba(34, 197, 94, 0.1)',
+                      border: '1px solid rgba(34, 197, 94, 0.3)',
+                      borderRadius: '12px',
+                      marginBottom: '20px',
+                    }}>
+                      <CheckCircle2 size={22} color="#22c55e" />
+                      <p style={{ margin: 0, color: '#16a34a', fontSize: '0.9rem', fontWeight: 600 }}>
+                        Tack för ditt meddelande! Vi återkommer inom 24 timmar.
+                      </p>
+                    </div>
+                  )}
+
+                  {status === 'error' && (
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '16px',
+                      background: 'rgba(239, 68, 68, 0.1)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                      borderRadius: '12px',
+                      marginBottom: '20px',
+                    }}>
+                      <AlertCircle size={22} color="#ef4444" />
+                      <p style={{ margin: 0, color: '#dc2626', fontSize: '0.9rem', fontWeight: 600 }}>
+                        {errorMsg || 'Något gick fel. Försök igen senare.'}
+                      </p>
+                    </div>
+                  )}
                   <label style={{ display: 'block', marginBottom: '4px', fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text-dark)' }}>
                     Namn *
                   </label>
@@ -308,6 +382,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
+                    disabled={status === 'sending'}
                     style={{
                       width: '100%',
                       padding: '16px',
@@ -317,7 +392,8 @@ export default function Contact() {
                       borderRadius: '12px',
                       fontWeight: 700,
                       fontSize: '1rem',
-                      cursor: 'pointer',
+                      cursor: status === 'sending' ? 'not-allowed' : 'pointer',
+                      opacity: status === 'sending' ? 0.7 : 1,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -325,6 +401,7 @@ export default function Contact() {
                       transition: 'transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease',
                     }}
                     onMouseEnter={e => {
+                      if (status === 'sending') return;
                       const el = e.currentTarget as HTMLElement;
                       el.style.transform = 'translateY(-2px)';
                       el.style.boxShadow = '0 8px 24px rgba(234, 88, 12, 0.4)';
@@ -335,7 +412,10 @@ export default function Contact() {
                       el.style.boxShadow = 'none';
                     }}
                   >
-                    <Send size={18} /> Skicka offertförfrågan
+                    {status === 'sending'
+                      ? (<><Loader2 size={18} className="animate-spin" /> Skickar...</>)
+                      : (<><Send size={18} /> Skicka offertförfrågan</>)
+                    }
                   </button>
                 </form>
               </div>
