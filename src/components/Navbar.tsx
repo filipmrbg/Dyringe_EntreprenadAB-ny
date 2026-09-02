@@ -549,8 +549,8 @@ export default function Navbar() {
           height: 15px;
         }
         .nav-logo {
-          height: 88px;
-          max-height: 14vh;
+          height: 110px;
+          max-height: 16vh;
           width: auto;
           display: block;
           object-fit: contain;
@@ -562,7 +562,7 @@ export default function Navbar() {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .nav-logo.scrolled {
-          height: 68px;
+          height: 82px;
           background-color: transparent;
           padding: 0;
           border-radius: 0;
@@ -575,15 +575,15 @@ export default function Navbar() {
           .nav-pill { display: none !important; }
           .hamburger { display: flex !important; }
           .offert-btn { display: none !important; }
-          nav.navbar-el { padding: 14px 20px !important; }
-          nav.navbar-el.scrolled { padding: 10px 20px !important; }
+          nav.navbar-el { padding: 12px 20px !important; }
+          nav.navbar-el.scrolled { padding: 8px 20px !important; }
           .mobile-phone-btn { display: flex !important; align-items: center; }
           .nav-logo {
-            height: 62px;
+            height: 75px;
             padding: 0;
           }
           .nav-logo.scrolled {
-            height: 50px;
+            height: 60px;
             padding: 0;
           }
         }

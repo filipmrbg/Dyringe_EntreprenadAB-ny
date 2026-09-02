@@ -192,7 +192,7 @@ export default function Quote() {
                     <option value="gravning">Grävning</option>
                     <option value="byggnation">Byggnation</option>
                     <option value="betong">Betong</option>
-                    <option value="maskinforare">Maskinförare</option>
+                    <option value="maskintjanster">Maskintjänster</option>
                     <option value="annat">Annat projekt</option>
                   </select>
 
@@ -230,7 +230,7 @@ export default function Quote() {
                       transition: 'transform 0.2s ease, opacity 0.2s ease',
                     }}
                   >
-                    <Send size={18} /> SKICKA OFFERTFÖRFRÅGAN
+                    <Send size={18} /> Skicka offertförfrågan
                   </button>
                 </form>
               </div>

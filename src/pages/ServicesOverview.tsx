@@ -52,7 +52,7 @@ export default function ServicesOverview() {
       {/* ── HERO HEADER ──────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(/service-markarbete.webp)',
+        backgroundImage: 'url(/services-hero-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 45%',
         paddingTop: '140px',
@@ -175,7 +175,9 @@ export default function ServicesOverview() {
                         overflow: 'hidden',
                         boxShadow: '0 20px 40px rgba(15, 23, 42, 0.12)',
                         border: '3px solid #ffffff',
-                        aspectRatio: '4/3',
+                        aspectRatio: '1 / 1',
+                        minHeight: '380px',
+                        maxHeight: '520px',
                         background: '#0f172a',
                       }}>
                         <img
@@ -188,6 +190,7 @@ export default function ServicesOverview() {
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
+                            objectPosition: 'center 35%',
                             display: 'block',
                           }}
                         />

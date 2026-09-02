@@ -78,11 +78,11 @@ const images: SiteImages = {
 
   services: {
     nybyggnation: {
-      url: '/service-markarbete.webp',
-      alt: 'Grävning och markarbete i Örebro och Närke',
+      url: '/service-gravning.webp',
+      alt: 'Grävning och markarbete i Örebro',
     },
     smahusbyggnation: {
-      url: '/service-smahusbyggnation.webp',
+      url: '/service-byggnation.webp',
       alt: 'Byggnation och snickeri i Örebro',
     },
     renovering: {
@@ -94,8 +94,8 @@ const images: SiteImages = {
       alt: 'Maskintjänster och entreprenad i Örebro',
     },
     totalentreprenad: {
-      url: '/service-totalentreprenad.webp',
-      alt: 'Totalentreprenad och markanläggning i Örebro',
+      url: '/service-maskinforare.webp',
+      alt: 'Maskinförare och entreprenad i Örebro',
     },
   },
 

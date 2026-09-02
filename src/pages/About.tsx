@@ -15,19 +15,7 @@ const teamMembers = [
     role: 'Ägare & Projektledare / Maskinförare',
     name: 'Linus Eriksson',
     initials: 'LE',
-    description: 'Leder Dyringe Entreprenad AB med mångårig erfarenhet inom grävning, anläggning, betong och maskintjänster i Örebro.',
-  },
-  {
-    role: 'Yrkesförare & Maskinist',
-    name: 'Johan S.',
-    initials: 'JS',
-    description: 'Specialist på schaktning, tomtplanering, markberedning och precisionsgrävning med moderna maskiner.',
-  },
-  {
-    role: 'Hantverkare & Betongarbetare',
-    name: 'Erik L.',
-    initials: 'EL',
-    description: 'Erfaren inom betonggjutning, platta på mark, armering och träkonstruktioner med fokus på hållbarhet.',
+    description: 'Leder Dyringe Entreprenad AB med mångårig erfarenhet inom grävning, anläggning, betong och maskintjänster i Örebro med omnejd.',
   },
 ];
 
@@ -42,7 +30,7 @@ export default function About() {
       {/* ── SECTION A: HERO HEADER ────────────────────────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(/service-markarbete.webp)',
+        backgroundImage: 'url(/about-hero-bg.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
         paddingTop: '150px',
@@ -75,26 +63,25 @@ export default function About() {
 
       {/* ── SECTION B: ABOUT STORY & HISTORY ─────────────────────────── */}
       <section style={{ background: 'var(--color-light)', padding: '100px 0' }}>
-        <div style={{ ...container, maxWidth: '960px' }}>
+        <div style={{ ...container, maxWidth: '1100px' }}>
           <div className="about-content-grid" style={{
             display: 'grid',
-            gridTemplateColumns: '260px 1fr',
-            gap: '48px',
+            gridTemplateColumns: 'clamp(320px, 40%, 460px) 1fr',
+            gap: '60px',
             alignItems: 'start',
           }}>
 
-            {/* Left: Transparent Company Logo / Image */}
-            <ScrollReveal animation="scale-in" easing="spring">
+            {/* Left: Company Photo Card */}
+            <ScrollReveal animation="fade-right" duration={0.8}>
               <div style={{
                 position: 'sticky',
                 top: '120px',
-                display: 'flex',
-                justifyContent: 'center',
-                background: '#ffffff',
-                borderRadius: '20px',
-                padding: '32px',
-                border: '1px solid #e2e8f0',
-                boxShadow: '0 12px 32px rgba(0,0,0,0.08)',
+                width: '100%',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 48px rgba(15, 23, 42, 0.12)',
+                aspectRatio: '4 / 5',
+                maxHeight: '520px',
               }}>
                 <img
                   src={images.about.hero.url || '/about.jpg'}
@@ -103,9 +90,8 @@ export default function About() {
                   decoding="async"
                   style={{
                     width: '100%',
-                    maxWidth: '260px',
-                    height: 'auto',
-                    objectFit: 'contain',
+                    height: '100%',
+                    objectFit: 'cover',
                     display: 'block',
                   }}
                 />
@@ -197,10 +183,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── SECTION D: TEAM PROFILES (3 PERSONS) ──────────────────────────── */}
+      {/* ── SECTION D: FOUNDER & LEADERSHIP ──────────────────────────── */}
       <section style={{ background: '#ffffff', padding: '90px 0', borderTop: '1px solid #e2e8f0' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 40px)' }}>
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+        <div style={{ maxWidth: '640px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 40px)' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <ScrollReveal animation="blur-in">
               <h2 style={{
                 color: 'var(--color-text-dark)',
@@ -209,7 +195,7 @@ export default function About() {
                 letterSpacing: '-0.03em',
                 margin: '0 0 12px 0',
               }}>
-                Möt vårt team
+                Grundare & Kontaktperson
               </h2>
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={100}>
@@ -217,18 +203,17 @@ export default function About() {
                 color: 'var(--color-gray-600)',
                 fontSize: '1rem',
                 lineHeight: 1.7,
-                maxWidth: '580px',
+                maxWidth: '540px',
                 margin: '0 auto',
               }}>
-                Erfarna och engagerade maskinförare och entreprenörer som levererar kvalitet och noggrannhet i Örebro med omnejd.
+                Linus Eriksson leder Dyringe Entreprenad AB och säkerställer personligt engagemang, yrkesskicklighet och trygghet i varje uppdrag.
               </p>
             </ScrollReveal>
           </div>
 
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '28px',
+            maxWidth: '480px',
+            margin: '0 auto',
           }} className="team-grid">
             {teamMembers.map((member, i) => (
               <ScrollReveal key={i} animation="slide-up-fade" delay={i * 120}>

@@ -167,7 +167,7 @@ export default function Home() {
         >
           <video
             ref={heroVideoRef}
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260826_194908_af3a1c07-9697-47da-a296-23fd417702c4.mp4"
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4"
             preload="auto"
             autoPlay
             loop
@@ -180,7 +180,8 @@ export default function Home() {
               objectPosition: 'center',
             }}
           >
-            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260826_194908_af3a1c07-9697-47da-a296-23fd417702c4.mp4" type="video/mp4" />
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4" type="video/mp4" />
+            <source src="/hero-video.mp4" type="video/mp4" />
           </video>
         </div>
         {/* Dark overlay */}
@@ -214,40 +215,40 @@ export default function Home() {
                 display: 'block',
                 marginBottom: '14px',
               }}>
-                ENTREPRENAD & MARKARBETE I ÖREBRO
+                UTGÅR FRÅN ÖREBRO MED OMNEJD
               </span>
             </ScrollReveal>
 
-            {/* Huge Bold Headline (H1) using Outfit font */}
+            {/* Huge Bold Headline (H1) */}
             <ScrollReveal animation="fade-up" delay={100} duration={0.8}>
               <h1 style={{
-                fontFamily: "'Outfit', sans-serif",
-                color: '#ffffff',
-                fontSize: 'clamp(2.8rem, 6.5vw, 5.2rem)',
+                fontFamily: 'var(--font-family)',
+                fontSize: 'clamp(1.85rem, 4.5vw, 4.2rem)',
                 fontWeight: 900,
-                lineHeight: 0.98,
+                lineHeight: 1.05,
                 textTransform: 'uppercase',
                 letterSpacing: '-0.01em',
                 margin: '0 0 24px 0',
                 textShadow: '0 4px 18px rgba(0, 0, 0, 0.75)',
               }}>
-                DYRINGE<br />ENTREPRENAD AB
+                <span style={{ color: '#ffffff', display: 'block' }}>DYRINGE</span>
+                <span style={{ color: 'var(--color-primary)', display: 'block', whiteSpace: 'nowrap' }}>ENTREPRENAD AB</span>
               </h1>
             </ScrollReveal>
 
             {/* Subtitle / Description */}
             <ScrollReveal animation="fade-up" delay={200} duration={0.8}>
               <p style={{
-                fontFamily: "'Outfit', 'Plus Jakarta Sans', sans-serif",
+                fontFamily: 'var(--font-family)',
                 color: 'rgba(255, 255, 255, 0.88)',
                 fontSize: 'clamp(1rem, 1.8vw, 1.18rem)',
                 lineHeight: 1.65,
-                maxWidth: '600px',
+                maxWidth: '620px',
                 margin: '0 0 36px 0',
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Professionell entreprenad, grävning, byggnation, betong och maskintjänster i Örebro med omnejd. Från tomtplanering och gjutning till nybyggnation och färdigställda anläggningsprojekt med högsta precision och yrkesstolthet.
+                Vi på Dyringe Entreprenad AB utgår från Örebro och erbjuder heltäckande tjänster inom grävning, byggnation, betonggjutning och maskinförare. Med modern maskinpark och gedigen yrkeskunskap förverkligar vi dina mark- och byggprojekt från första spadtag till färdigt resultat.
               </p>
             </ScrollReveal>
 
@@ -396,7 +397,8 @@ export default function Home() {
                   <div style={{
                     position: 'relative',
                     width: '100%',
-                    height: '190px',
+                    aspectRatio: '4 / 3',
+                    minHeight: '230px',
                     overflow: 'hidden',
                     background: '#0f172a',
                   }}>
@@ -409,6 +411,7 @@ export default function Home() {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
+                        objectPosition: 'center 35%',
                         display: 'block',
                         transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
                       }}

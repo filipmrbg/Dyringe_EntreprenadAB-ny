@@ -8,9 +8,9 @@ interface IconProps {
 }
 
 /**
- * 1. Nybyggnation: House with pitched roof, apex antenna line, door and window
+ * 1. Grävning: Heavy excavator boom, hydraulic arm & tooth bucket digging into soil
  */
-export function NybyggnationIcon({ color = '#c28447', size = 38, style }: IconProps) {
+export function GravningIcon({ color = '#c28447', size = 38, style }: IconProps) {
   return (
     <svg
       width={size}
@@ -18,29 +18,34 @@ export function NybyggnationIcon({ color = '#c28447', size = 38, style }: IconPr
       viewBox="0 0 40 40"
       fill="none"
       stroke={color}
-      strokeWidth="1.7"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       style={{ display: 'block', ...style }}
     >
-      {/* Apex vertical line */}
-      <line x1="20" y1="4" x2="20" y2="10" />
-      {/* Roof */}
-      <polyline points="8 20 20 10 32 20" />
-      {/* House body */}
-      <rect x="11" y="20" width="18" height="15" />
-      {/* Center/left door */}
-      <rect x="14" y="27" width="5" height="8" />
-      {/* Window */}
-      <rect x="22" y="24" width="4" height="4" />
+      {/* Machine crawler track base */}
+      <rect x="5" y="28" width="16" height="6" rx="3" />
+      <circle cx="8" cy="31" r="1" fill={color} />
+      <circle cx="13" cy="31" r="1" fill={color} />
+      <circle cx="18" cy="31" r="1" fill={color} />
+      {/* Cabin body */}
+      <path d="M8 28V20H16L18 28" />
+      {/* Articulated boom & arm */}
+      <path d="M16 22L23 10L30 18" />
+      {/* Excavator bucket with digging teeth */}
+      <path d="M30 18L35 22L32 29L26 26Z" />
+      <line x1="35" y1="22" x2="37" y2="25" />
+      <line x1="33.5" y1="26" x2="35.5" y2="29" />
+      {/* Ground cut line */}
+      <path d="M22 34H35" strokeDasharray="2 2" />
     </svg>
   );
 }
 
 /**
- * 2. Renovering: Blueprint / floorplan with drafting ruler
+ * 2. Byggnation: House construction frame, roof rafters & hammer
  */
-export function RenoveringIcon({ color = '#c28447', size = 38, style }: IconProps) {
+export function ByggnationIcon({ color = '#c28447', size = 38, style }: IconProps) {
   return (
     <svg
       width={size}
@@ -48,31 +53,31 @@ export function RenoveringIcon({ color = '#c28447', size = 38, style }: IconProp
       viewBox="0 0 40 40"
       fill="none"
       stroke={color}
-      strokeWidth="1.7"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       style={{ display: 'block', ...style }}
     >
-      {/* Floorplan walls / blueprint outline */}
-      <path d="M10 35V20L19 13L28 20V35H10Z" />
-      {/* Blueprint grid lines */}
-      <line x1="10" y1="27" x2="28" y2="27" />
-      <line x1="19" y1="20" x2="19" y2="35" />
-      {/* Drafting triangle ruler */}
-      <path d="M23 7L35 19H29" />
-      <path d="M26 10L31 15" />
-      {/* Measurement ticks */}
-      <line x1="26" y1="8" x2="28" y2="10" />
-      <line x1="29" y1="11" x2="31" y2="13" />
-      <line x1="32" y1="14" x2="34" y2="16" />
+      {/* Roof truss / rafters */}
+      <polyline points="6 18 20 6 34 18" />
+      <line x1="20" y1="6" x2="20" y2="18" />
+      <line x1="12" y1="13" x2="20" y2="18" />
+      <line x1="28" y1="13" x2="20" y2="18" />
+      {/* Timber wall frame */}
+      <rect x="9" y="18" width="22" height="16" />
+      <line x1="16" y1="18" x2="16" y2="34" />
+      <line x1="23" y1="18" x2="23" y2="34" />
+      <line x1="9" y1="26" x2="31" y2="26" />
+      {/* Base foundation line */}
+      <line x1="6" y1="34" x2="34" y2="34" />
     </svg>
   );
 }
 
 /**
- * 3. Tillbyggnad: House with extension addition and expansion arrow
+ * 3. Betong: 3D concrete foundation slab & finishing float / trowel
  */
-export function TillbyggnadIcon({ color = '#c28447', size = 38, style }: IconProps) {
+export function BetongIcon({ color = '#c28447', size = 38, style }: IconProps) {
   return (
     <svg
       width={size}
@@ -80,29 +85,29 @@ export function TillbyggnadIcon({ color = '#c28447', size = 38, style }: IconPro
       viewBox="0 0 40 40"
       fill="none"
       stroke={color}
-      strokeWidth="1.7"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       style={{ display: 'block', ...style }}
     >
-      {/* Main house pitched left roof and body */}
-      <path d="M8 34V18L18 10V34H8Z" />
-      {/* Extension building on the right */}
-      <rect x="18" y="19" width="14" height="15" />
-      {/* Large sliding glass door / window lines */}
-      <line x1="23" y1="24" x2="23" y2="34" />
-      <line x1="27" y1="24" x2="27" y2="34" />
-      {/* Expansion Arrow on top */}
-      <line x1="18" y1="7" x2="28" y2="7" />
-      <polyline points="25 4 28 7 25 10" />
+      {/* Isometric concrete foundation slab */}
+      <polygon points="20 8 35 15 20 22 5 15" />
+      <polygon points="5 15 20 22 20 32 5 25" />
+      <polygon points="35 15 20 22 20 32 35 25" />
+      {/* Rebar grid lines on top slab */}
+      <line x1="12" y1="11.5" x2="27" y2="18.5" opacity="0.6" />
+      <line x1="27" y1="11.5" x2="12" y2="18.5" opacity="0.6" />
+      {/* Concrete trowel float handle & blade */}
+      <path d="M16 12L24 16" strokeWidth="2.6" />
+      <path d="M20 14V9.5L24 8.5" />
     </svg>
   );
 }
 
 /**
- * 4. Totalentreprenad: Clipboard with checklist and circular checkmark badge
+ * 4. Maskinförare: Heavy equipment operator steering / joystick controls & industrial gear
  */
-export function TotalentreprenadIcon({ color = '#c28447', size = 38, style }: IconProps) {
+export function MaskinforareIcon({ color = '#c28447', size = 38, style }: IconProps) {
   return (
     <svg
       width={size}
@@ -110,24 +115,24 @@ export function TotalentreprenadIcon({ color = '#c28447', size = 38, style }: Ic
       viewBox="0 0 40 40"
       fill="none"
       stroke={color}
-      strokeWidth="1.7"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
       style={{ display: 'block', ...style }}
     >
-      {/* Clipboard top clip */}
-      <path d="M16 6H24V10H16V6Z" />
-      {/* Clipboard board */}
-      <path d="M13 8H11C9.89543 8 9 8.89543 9 10V33C9 34.1046 9.89543 35 11 35H24" />
-      <path d="M29 8H27" />
-      <path d="M31 10V20" />
-      {/* Checklist items */}
-      <line x1="14" y1="15" x2="23" y2="15" />
-      <line x1="14" y1="20" x2="21" y2="20" />
-      <line x1="14" y1="25" x2="19" y2="25" />
-      {/* Checkmark circle badge */}
-      <circle cx="27" cy="28" r="6" />
-      <polyline points="24.5 28 26.5 30 29.5 26" />
+      {/* Industrial cogwheel / steering circle */}
+      <circle cx="20" cy="20" r="13" />
+      <circle cx="20" cy="20" r="4.5" fill={color} fillOpacity="0.15" />
+      {/* Control spokes */}
+      <line x1="20" y1="7" x2="20" y2="15.5" />
+      <line x1="9.5" y1="26" x2="16.5" y2="22.5" />
+      <line x1="30.5" y1="26" x2="23.5" y2="22.5" />
+      {/* Gear teeth notches around rim */}
+      <line x1="20" y1="4" x2="20" y2="7" />
+      <line x1="33" y1="12.5" x2="36" y2="14" />
+      <line x1="7" y1="12.5" x2="4" y2="14" />
+      <line x1="29.5" y1="29.5" x2="32" y2="32" />
+      <line x1="10.5" y1="29.5" x2="8" y2="32" />
     </svg>
   );
 }
@@ -136,18 +141,20 @@ export function ServiceIcon({ type, color, size = 38 }: { type: string; color?: 
   switch (type) {
     case 'gravning':
     case 'gravning-markarbete':
-      return <RenoveringIcon color={color} size={size} />;
+      return <GravningIcon color={color} size={size} />;
     case 'byggnation':
     case 'nybyggnation':
-      return <NybyggnationIcon color={color} size={size} />;
+    case 'smahusbyggnation':
+      return <ByggnationIcon color={color} size={size} />;
     case 'betong':
-      return <TillbyggnadIcon color={color} size={size} />;
+      return <BetongIcon color={color} size={size} />;
     case 'maskinforare':
     case 'maskintjanster':
     case 'totalentreprenad':
-      return <TotalentreprenadIcon color={color} size={size} />;
+    case 'ombyggnation':
+      return <MaskinforareIcon color={color} size={size} />;
     default:
-      return <NybyggnationIcon color={color} size={size} />;
+      return <GravningIcon color={color} size={size} />;
   }
 }
 

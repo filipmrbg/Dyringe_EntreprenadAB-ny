@@ -41,8 +41,8 @@ export const services: ServiceItem[] = [
     detailedDescription: `Planerar du ett markarbete, dränering av husgrund eller schaktning inför nybyggnation? Dyringe Entreprenad AB utför alla typer av grävarbeten med moderna maskiner och hög precision.
 
 Vi hjälper både privatpersoner, företag och fastighetsägare i Örebro med allt från tomtplanering och finplanering till kabelgrävning, vatten och avlopp samt fuktskyddande dränering.`,
-    heroImage: '/service-markarbete.webp',
-    image: '/service-markarbete.webp',
+    heroImage: '/service-gravning.webp',
+    image: '/service-gravning.webp',
     href: '/tjanster#gravning',
     tag: 'Grävning',
     badge: 'Precision & Erfarenhet',
@@ -71,8 +71,8 @@ Vi hjälper både privatpersoner, företag och fastighetsägare i Örebro med al
     detailedDescription: `Söker du en pålitlig byggare för att uppföra ett garage, attefallshus, utbyggnad eller ett rejält trädäck? Dyringe Entreprenad AB utför kundanpassade byggnationer med starkt fokus på hållbarhet, funktion och finish.
 
 Vi tar hand om hela byggprocessen från gjuten grund och regelstomme till färdigställd fasad och tak. Som privatperson kan du självklart nyttja 30 % ROT avdrag på arbetskostnaden.`,
-    heroImage: '/service-smahusbyggnation.webp',
-    image: '/service-smahusbyggnation.webp',
+    heroImage: '/service-byggnation.webp',
+    image: '/service-byggnation.webp',
     href: '/tjanster#byggnation',
     tag: 'Byggnation',
     badge: 'ROT avdrag 30%',
@@ -131,8 +131,8 @@ Vi ombesörjer hela kedjan: schaktning, bärlager, isolering, golvvärmeläggnin
     detailedDescription: `Behöver du anlita en erfaren maskinförare eller boka maskintjänster för ditt entreprenadprojekt? Dyringe Entreprenad AB erbjuder professionell maskinkörning med hög kapacitet och flexibilitet.
 
 Med bred kompetens inom grävning, planering och materialhantering ser vi till att dina markprojekt flyter på effektivt och enligt tidsplan. Vi arbetar snabbt, säkert och med full hänsyn till omgivningen.`,
-    heroImage: '/service-totalentreprenad.webp',
-    image: '/service-totalentreprenad.webp',
+    heroImage: '/service-maskinforare.webp',
+    image: '/service-maskinforare.webp',
     href: '/tjanster#maskinforare',
     tag: 'Maskinförare',
     badge: 'Kvalitet & Erfarenhet',
