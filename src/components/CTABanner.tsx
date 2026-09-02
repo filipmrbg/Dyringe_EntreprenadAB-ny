@@ -101,24 +101,6 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
       overflow: 'hidden',
       padding: 'clamp(60px, 8vw, 80px) 0',
     }}>
-      {/* Poster image — visible immediately, fades out once video is ready */}
-      <img
-        src="/cta-mid-section.webp"
-        alt=""
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
-          pointerEvents: 'none',
-          opacity: videoLoaded ? 0 : 1,
-          transition: 'opacity 0.6s ease',
-        }}
-      />
-
       {/* Background Video — lazy-loaded only when section approaches viewport */}
       <video
         ref={videoRef}
