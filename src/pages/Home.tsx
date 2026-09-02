@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Star,
@@ -58,12 +58,12 @@ export default function Home() {
   const { hash, state } = useLocation();
   const heroBgRef = useRef<HTMLDivElement>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
-  const heroVideoMobileRef = useRef<HTMLVideoElement>(null);
 
   const desktopVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4';
   const mobileVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_151942_87b91a54-bbfc-4fdc-916c-fef3ed01984b.mp4';
 
-  const isMobile = useRef<boolean>(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
+  const [isMobile, setIsMobile] = useState<boolean>(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
+  const heroVideoUrl = isMobile ? mobileVideoUrl : desktopVideoUrl;
 
   useEffect(() => {
     const targetId = (state as { scrollTo?: string } | null)?.scrollTo || (hash ? hash.replace('#', '') : null);
@@ -104,16 +104,16 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const activeVideo = isMobile.current ? heroVideoMobileRef.current : heroVideoRef.current;
-    const inactiveVideo = isMobile.current ? heroVideoRef.current : heroVideoMobileRef.current;
-    if (!activeVideo) return;
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
-    if (inactiveVideo) {
-      inactiveVideo.removeAttribute('src');
-      inactiveVideo.load();
-    }
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
 
-    const attemptPlay = (video: HTMLVideoElement) => {
+    const attemptPlay = () => {
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
@@ -126,12 +126,12 @@ export default function Home() {
     };
 
     const events = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing'];
-    const handler = () => attemptPlay(activeVideo);
-    events.forEach((event) => activeVideo.addEventListener(event, handler));
-    attemptPlay(activeVideo);
+    const handler = () => attemptPlay();
+    events.forEach((event) => video.addEventListener(event, handler));
+    attemptPlay();
 
     const unlockPlay = () => {
-      if (activeVideo.paused) attemptPlay(activeVideo);
+      if (video.paused) attemptPlay();
     };
 
     window.addEventListener('touchstart', unlockPlay, { passive: true });
@@ -140,13 +140,13 @@ export default function Home() {
     window.addEventListener('click', unlockPlay, { passive: true });
 
     return () => {
-      events.forEach((event) => activeVideo.removeEventListener(event, handler));
+      events.forEach((event) => video.removeEventListener(event, handler));
       window.removeEventListener('touchstart', unlockPlay);
       window.removeEventListener('touchend', unlockPlay);
       window.removeEventListener('scroll', unlockPlay);
       window.removeEventListener('click', unlockPlay);
     };
-  }, []);
+  }, [isMobile]);
 
 
 
@@ -176,8 +176,8 @@ export default function Home() {
           }}
         >
           <video
+            key={heroVideoUrl}
             ref={heroVideoRef}
-            className="hero-video-desktop"
             preload="auto"
             autoPlay
             loop
@@ -190,24 +190,7 @@ export default function Home() {
               objectPosition: 'center',
             }}
           >
-            <source src={desktopVideoUrl} type="video/mp4" />
-          </video>
-          <video
-            ref={heroVideoMobileRef}
-            className="hero-video-mobile"
-            preload="auto"
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          >
-            <source src={mobileVideoUrl} type="video/mp4" />
+            <source src={heroVideoUrl} type="video/mp4" />
           </video>
         </div>
         {/* Dark overlay */}
