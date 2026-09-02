@@ -247,7 +247,7 @@ export default function Home() {
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Professionella tjänster inom grävning, byggnation, betong och maskinförare — med bas i Örebro.
+                Vi på Dyringe Entreprenad AB utgår från Örebro och erbjuder heltäckande tjänster inom grävning, byggnation, betonggjutning och maskinförare. Med modern maskinpark och gedigen yrkeskunskap förverkligar vi dina mark och byggprojekt från första spadtag till färdigt resultat.
               </p>
             </ScrollReveal>
 
