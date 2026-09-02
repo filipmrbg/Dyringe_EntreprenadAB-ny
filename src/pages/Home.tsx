@@ -58,6 +58,10 @@ export default function Home() {
   const { hash, state } = useLocation();
   const heroBgRef = useRef<HTMLDivElement>(null);
   const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const heroVideoMobileRef = useRef<HTMLVideoElement>(null);
+
+  const desktopVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4';
+  const mobileVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_151942_87b91a54-bbfc-4fdc-916c-fef3ed01984b.mp4';
 
   useEffect(() => {
     const targetId = (state as { scrollTo?: string } | null)?.scrollTo || (hash ? hash.replace('#', '') : null);
@@ -98,11 +102,10 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const video = heroVideoRef.current;
-    if (!video) return;
+    const videos = [heroVideoRef.current, heroVideoMobileRef.current].filter((v): v is HTMLVideoElement => v !== null);
+    if (videos.length === 0) return;
 
-    const attemptPlay = () => {
-      if (!video) return;
+    const attemptPlay = (video: HTMLVideoElement) => {
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
@@ -114,15 +117,20 @@ export default function Home() {
       }
     };
 
-    attemptPlay();
-
     const events = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing'];
-    events.forEach((event) => video.addEventListener(event, attemptPlay));
+
+    const videoHandlers: Array<{ video: HTMLVideoElement; handler: () => void }> = [];
+    videos.forEach((video) => {
+      const handler = () => attemptPlay(video);
+      events.forEach((event) => video.addEventListener(event, handler));
+      videoHandlers.push({ video, handler });
+      attemptPlay(video);
+    });
 
     const unlockPlay = () => {
-      if (video && video.paused) {
-        attemptPlay();
-      }
+      videos.forEach((video) => {
+        if (video.paused) attemptPlay(video);
+      });
     };
 
     window.addEventListener('touchstart', unlockPlay, { passive: true });
@@ -131,7 +139,9 @@ export default function Home() {
     window.addEventListener('click', unlockPlay, { passive: true });
 
     return () => {
-      events.forEach((event) => video.removeEventListener(event, attemptPlay));
+      videoHandlers.forEach(({ video, handler }) => {
+        events.forEach((event) => video.removeEventListener(event, handler));
+      });
       window.removeEventListener('touchstart', unlockPlay);
       window.removeEventListener('touchend', unlockPlay);
       window.removeEventListener('scroll', unlockPlay);
@@ -167,7 +177,8 @@ export default function Home() {
         >
           <video
             ref={heroVideoRef}
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4"
+            className="hero-video-desktop"
+            src={desktopVideoUrl}
             preload="auto"
             autoPlay
             loop
@@ -180,7 +191,25 @@ export default function Home() {
               objectPosition: 'center',
             }}
           >
-            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4" type="video/mp4" />
+            <source src={desktopVideoUrl} type="video/mp4" />
+          </video>
+          <video
+            ref={heroVideoMobileRef}
+            className="hero-video-mobile"
+            src={mobileVideoUrl}
+            preload="auto"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+            }}
+          >
+            <source src={mobileVideoUrl} type="video/mp4" />
           </video>
         </div>
         {/* Dark overlay */}

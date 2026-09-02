@@ -261,3 +261,16 @@ body {
 .service-card-el:hover .service-card-arrow {
   transform: translateX(6px);
 }
+
+.hero-video-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero-video-desktop {
+    display: none;
+  }
+  .hero-video-mobile {
+    display: block;
+  }
+}
