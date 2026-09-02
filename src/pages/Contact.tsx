@@ -82,7 +82,7 @@ export default function Contact() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
           },
-          body: JSON.stringify({ name, email, phone, message }),
+          body: JSON.stringify({ name, email, phone, service, message }),
         },
       );
 

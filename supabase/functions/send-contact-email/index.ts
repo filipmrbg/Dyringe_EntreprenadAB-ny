@@ -6,7 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
-const RECIPIENT_EMAIL = "dyringe@outlook.com";
+const RECIPIENT_EMAIL = "f.bjorgaas@gmail.com";
 
 function formatSwedishDateTime(date: Date): string {
   const months = [
@@ -34,6 +34,7 @@ function buildEmailHtml(
   name: string,
   email: string,
   phone: string,
+  service: string,
   message: string,
   dateTime: string,
   submissionId: string,
@@ -41,6 +42,7 @@ function buildEmailHtml(
   const safeName = escapeHtml(name);
   const safeEmail = escapeHtml(email);
   const safePhone = escapeHtml(phone);
+  const safeService = escapeHtml(service);
   const safeMessage = escapeHtml(message);
   const safeDateTime = escapeHtml(dateTime);
   const safeId = escapeHtml(submissionId);
@@ -86,6 +88,13 @@ function buildEmailHtml(
                 </tr>
 
                 <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-weight: 600; color: #374151; display: block; margin-bottom: 4px;">Tjänst:</span>
+                    <span style="color: #1f2937;">${safeService}</span>
+                  </td>
+                </tr>
+
+                <tr>
                   <td style="padding: 12px 0;">
                     <span style="font-weight: 600; color: #374151; display: block; margin-bottom: 4px;">Meddelande:</span>
                     <p style="margin: 0; color: #1f2937; white-space: pre-wrap; line-height: 1.5;">${safeMessage}</p>
@@ -126,6 +135,7 @@ Deno.serve(async (req: Request) => {
     const email = typeof body.email === "string" ? body.email.trim() : "";
     const phone = typeof body.phone === "string" ? body.phone.trim() : "";
     const message = typeof body.message === "string" ? body.message.trim() : "";
+    const service = typeof body.service === "string" ? body.service.trim() : "";
 
     if (!name || !email || !phone || !message) {
       return new Response(
@@ -144,7 +154,7 @@ Deno.serve(async (req: Request) => {
 
     const submissionId = crypto.randomUUID();
     const dateTime = formatSwedishDateTime(new Date());
-    const html = buildEmailHtml(name, email, phone, message, dateTime, submissionId);
+    const html = buildEmailHtml(name, email, phone, service || "Ej angiven", message, dateTime, submissionId);
 
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
     if (!resendApiKey) {
@@ -161,7 +171,7 @@ Deno.serve(async (req: Request) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Dyringe Entreprenad <onboarding@resend.dev>",
+        from: "Kontaktformulär <info@contact.bgbygger.se>",
         to: RECIPIENT_EMAIL,
         reply_to: email,
         subject: `Ny kontaktförfrågan från ${name}`,
