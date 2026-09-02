@@ -62,7 +62,6 @@ export default function Home() {
 
   const desktopVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4';
   const mobileVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_151942_87b91a54-bbfc-4fdc-916c-fef3ed01984b.mp4';
-  const posterUrl = '/hero-main.webp';
 
   const isMobile = useRef<boolean>(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
 
@@ -173,12 +172,12 @@ export default function Home() {
             inset: '-20% 0',
             zIndex: 0,
             willChange: 'transform',
+            background: '#0f172a',
           }}
         >
           <video
             ref={heroVideoRef}
             className="hero-video-desktop"
-            poster={posterUrl}
             preload="auto"
             autoPlay
             loop
@@ -196,7 +195,6 @@ export default function Home() {
           <video
             ref={heroVideoMobileRef}
             className="hero-video-mobile"
-            poster={posterUrl}
             preload="auto"
             autoPlay
             loop
