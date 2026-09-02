@@ -222,12 +222,12 @@ export default function Home() {
             <ScrollReveal animation="fade-up" delay={100} duration={0.8}>
               <h1 style={{
                 fontFamily: 'var(--font-family)',
-                fontSize: 'clamp(1.85rem, 4.5vw, 4.2rem)',
+                fontSize: 'clamp(2.4rem, 7vw, 5rem)',
                 fontWeight: 900,
-                lineHeight: 1.05,
+                lineHeight: 1.0,
                 textTransform: 'uppercase',
-                letterSpacing: '-0.01em',
-                margin: '0 0 24px 0',
+                letterSpacing: '-0.015em',
+                margin: '0 0 20px 0',
                 textShadow: '0 4px 18px rgba(0, 0, 0, 0.75)',
               }}>
                 <span style={{ color: '#ffffff', display: 'block' }}>DYRINGE</span>
@@ -247,7 +247,7 @@ export default function Home() {
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Vi på Dyringe Entreprenad AB utgår från Örebro och erbjuder heltäckande tjänster inom grävning, byggnation, betonggjutning och maskinförare. Med modern maskinpark och gedigen yrkeskunskap förverkligar vi dina mark- och byggprojekt från första spadtag till färdigt resultat.
+                Professionella tjänster inom grävning, byggnation, betong och maskinförare — med bas i Örebro.
               </p>
             </ScrollReveal>
 
