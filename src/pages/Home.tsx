@@ -62,6 +62,9 @@ export default function Home() {
 
   const desktopVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4';
   const mobileVideoUrl = 'https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_151942_87b91a54-bbfc-4fdc-916c-fef3ed01984b.mp4';
+  const posterUrl = '/hero-main.webp';
+
+  const isMobile = useRef<boolean>(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
 
   useEffect(() => {
     const targetId = (state as { scrollTo?: string } | null)?.scrollTo || (hash ? hash.replace('#', '') : null);
@@ -102,8 +105,14 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const videos = [heroVideoRef.current, heroVideoMobileRef.current].filter((v): v is HTMLVideoElement => v !== null);
-    if (videos.length === 0) return;
+    const activeVideo = isMobile.current ? heroVideoMobileRef.current : heroVideoRef.current;
+    const inactiveVideo = isMobile.current ? heroVideoRef.current : heroVideoMobileRef.current;
+    if (!activeVideo) return;
+
+    if (inactiveVideo) {
+      inactiveVideo.removeAttribute('src');
+      inactiveVideo.load();
+    }
 
     const attemptPlay = (video: HTMLVideoElement) => {
       video.muted = true;
@@ -118,19 +127,12 @@ export default function Home() {
     };
 
     const events = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing'];
-
-    const videoHandlers: Array<{ video: HTMLVideoElement; handler: () => void }> = [];
-    videos.forEach((video) => {
-      const handler = () => attemptPlay(video);
-      events.forEach((event) => video.addEventListener(event, handler));
-      videoHandlers.push({ video, handler });
-      attemptPlay(video);
-    });
+    const handler = () => attemptPlay(activeVideo);
+    events.forEach((event) => activeVideo.addEventListener(event, handler));
+    attemptPlay(activeVideo);
 
     const unlockPlay = () => {
-      videos.forEach((video) => {
-        if (video.paused) attemptPlay(video);
-      });
+      if (activeVideo.paused) attemptPlay(activeVideo);
     };
 
     window.addEventListener('touchstart', unlockPlay, { passive: true });
@@ -139,9 +141,7 @@ export default function Home() {
     window.addEventListener('click', unlockPlay, { passive: true });
 
     return () => {
-      videoHandlers.forEach(({ video, handler }) => {
-        events.forEach((event) => video.removeEventListener(event, handler));
-      });
+      events.forEach((event) => activeVideo.removeEventListener(event, handler));
       window.removeEventListener('touchstart', unlockPlay);
       window.removeEventListener('touchend', unlockPlay);
       window.removeEventListener('scroll', unlockPlay);
@@ -178,7 +178,7 @@ export default function Home() {
           <video
             ref={heroVideoRef}
             className="hero-video-desktop"
-            src={desktopVideoUrl}
+            poster={posterUrl}
             preload="auto"
             autoPlay
             loop
@@ -196,7 +196,7 @@ export default function Home() {
           <video
             ref={heroVideoMobileRef}
             className="hero-video-mobile"
-            src={mobileVideoUrl}
+            poster={posterUrl}
             preload="auto"
             autoPlay
             loop
