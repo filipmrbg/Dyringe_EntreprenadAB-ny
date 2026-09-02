@@ -72,7 +72,7 @@ export default function Contact() {
       {/* ── SECTION A: HERO ───────────────────────────────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(/contact-hero-bg.png)',
+        backgroundImage: 'url(/contact-hero-bg.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
         paddingTop: '150px',

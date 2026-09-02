@@ -181,7 +181,6 @@ export default function Home() {
             }}
           >
             <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260902_135145_20a81927-0a01-4482-aed0-b29a41e5d804.mp4" type="video/mp4" />
-            <source src="/hero-video.mp4" type="video/mp4" />
           </video>
         </div>
         {/* Dark overlay */}

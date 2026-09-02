@@ -52,7 +52,7 @@ export default function ServicesOverview() {
       {/* ── HERO HEADER ──────────── */}
       <section style={{
         position: 'relative',
-        backgroundImage: 'url(/services-hero-bg.png)',
+        backgroundImage: 'url(/services-hero-bg.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 45%',
         paddingTop: '140px',
