@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 import Button from './Button';
 import ScrollReveal from './ScrollReveal';
@@ -17,59 +17,112 @@ const defaultCheckItems = [
 
 export default function CTABanner({ heading = defaultHeading, checkItems = defaultCheckItems }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const section = sectionRef.current;
+    if (!section) return;
 
-    const attemptPlay = () => {
-      if (!video) return;
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-      const promise = video.play();
-      if (promise !== undefined) {
-        promise.catch(() => {});
-      }
+    let playAttempted = false;
+
+    const loadAndPlay = () => {
+      const video = videoRef.current;
+      if (!video || playAttempted) return;
+      playAttempted = true;
+
+      video.src = '/cta-background-video.mp4';
+      video.load();
+
+      const attemptPlay = () => {
+        if (!video) return;
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(() => {});
+        }
+      };
+
+      const events = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing'];
+      events.forEach((event) => video.addEventListener(event, attemptPlay));
+
+      const onLoadedData = () => setVideoLoaded(true);
+      video.addEventListener('loadeddata', onLoadedData);
+
+      attemptPlay();
+
+      const unlockPlay = () => {
+        if (video && video.paused) {
+          attemptPlay();
+        }
+      };
+
+      window.addEventListener('touchstart', unlockPlay, { passive: true });
+      window.addEventListener('touchend', unlockPlay, { passive: true });
+      window.addEventListener('scroll', unlockPlay, { passive: true });
+      window.addEventListener('click', unlockPlay, { passive: true });
+
+      cleanupRef.current = () => {
+        events.forEach((event) => video.removeEventListener(event, attemptPlay));
+        video.removeEventListener('loadeddata', onLoadedData);
+        window.removeEventListener('touchstart', unlockPlay);
+        window.removeEventListener('touchend', unlockPlay);
+        window.removeEventListener('scroll', unlockPlay);
+        window.removeEventListener('click', unlockPlay);
+      };
     };
 
-    attemptPlay();
+    const cleanupRef = { current: () => {} };
 
-    const events = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing'];
-    events.forEach((event) => video.addEventListener(event, attemptPlay));
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          loadAndPlay();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0, rootMargin: '200px 0px' }
+    );
 
-    const unlockPlay = () => {
-      if (video && video.paused) {
-        attemptPlay();
-      }
-    };
-
-    window.addEventListener('touchstart', unlockPlay, { passive: true });
-    window.addEventListener('touchend', unlockPlay, { passive: true });
-    window.addEventListener('scroll', unlockPlay, { passive: true });
-    window.addEventListener('click', unlockPlay, { passive: true });
+    observer.observe(section);
 
     return () => {
-      events.forEach((event) => video.removeEventListener(event, attemptPlay));
-      window.removeEventListener('touchstart', unlockPlay);
-      window.removeEventListener('touchend', unlockPlay);
-      window.removeEventListener('scroll', unlockPlay);
-      window.removeEventListener('click', unlockPlay);
+      observer.disconnect();
+      cleanupRef.current();
     };
   }, []);
 
   return (
-    <section style={{ 
-      position: 'relative', 
-      background: 'var(--color-dark)', 
+    <section ref={sectionRef} style={{
+      position: 'relative',
+      background: 'var(--color-dark)',
       overflow: 'hidden',
       padding: 'clamp(60px, 8vw, 80px) 0',
     }}>
-      {/* Background Video */}
+      {/* Poster image — visible immediately, fades out once video is ready */}
+      <img
+        src="/cta-mid-section.webp"
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+          pointerEvents: 'none',
+          opacity: videoLoaded ? 0 : 1,
+          transition: 'opacity 0.6s ease',
+        }}
+      />
+
+      {/* Background Video — lazy-loaded only when section approaches viewport */}
       <video
         ref={videoRef}
-        src="/cta-background-video.mp4"
-        preload="auto"
+        preload="none"
         autoPlay
         loop
         muted
@@ -82,10 +135,10 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
           objectFit: 'cover',
           zIndex: 0,
           pointerEvents: 'none',
+          opacity: videoLoaded ? 1 : 0,
+          transition: 'opacity 0.6s ease',
         }}
-      >
-        <source src="/cta-background-video.mp4" type="video/mp4" />
-      </video>
+      />
 
       {/* Dark Premium Fading Overlay */}
       <div style={{
