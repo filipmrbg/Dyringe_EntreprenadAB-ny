@@ -1,4 +1,3 @@
-# Nymallbygg.
+# Dyringe Entreprenad AB
 
-[![Open in Bolt](https://bolt.new/static/open-in-bolt.svg)](https://bolt.new/~/sb1-kbxtxki3)
-
+Webbplats för Dyringe Entreprenad AB – markarbete, grävning, byggnation och betongarbeten i Örebro med omnejd.

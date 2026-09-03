@@ -124,9 +124,9 @@ export default function ProjectsGallery() {
           </div>
         </div>
 
-        {/* 6-Image Dynamic Ratio Collage Grid */}
+        {/* Dynamic Ratio Collage Grid */}
         <div
-          className="collage-grid"
+          className={`collage-grid ${references.length <= 3 ? 'collage-grid-3' : ''}`}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {references.map((item, idx) => {
@@ -222,12 +222,21 @@ export default function ProjectsGallery() {
       )}
 
       <style>{`
-        /* Desktop Dynamic Ratio 2-Row Collage */
+        /* Desktop Dynamic Ratio Collage */
         .collage-grid {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           grid-auto-rows: 250px;
           gap: 20px;
+        }
+
+        .collage-grid.collage-grid-3 {
+          grid-template-columns: repeat(3, 1fr);
+          grid-auto-rows: clamp(280px, 28vw, 360px);
+        }
+
+        .collage-grid.collage-grid-3 .collage-item {
+          grid-column: span 1 !important;
         }
 
         .collage-item {
@@ -265,6 +274,19 @@ export default function ProjectsGallery() {
 
         .collage-item-6 {
           grid-column: span 5;
+        }
+
+        /* Row 3: 5 cols (Wide) + 4 cols (Med) + 3 cols (Compact) */
+        .collage-item-7 {
+          grid-column: span 5;
+        }
+
+        .collage-item-8 {
+          grid-column: span 4;
+        }
+
+        .collage-item-9 {
+          grid-column: span 3;
         }
 
         .collage-card-img {
@@ -409,24 +431,21 @@ export default function ProjectsGallery() {
 
         /* Tablet & Mobile Fallbacks (Simple, non-messy) */
         @media (max-width: 900px) {
-          .collage-grid {
+          .collage-grid,
+          .collage-grid.collage-grid-3 {
             grid-template-columns: repeat(2, 1fr);
             grid-auto-rows: unset;
             gap: 16px;
           }
-          .collage-item-1,
-          .collage-item-2,
-          .collage-item-3,
-          .collage-item-4,
-          .collage-item-5,
-          .collage-item-6 {
+          .collage-item {
             grid-column: span 1 !important;
             aspect-ratio: 4 / 3;
           }
         }
 
         @media (max-width: 580px) {
-          .collage-grid {
+          .collage-grid,
+          .collage-grid.collage-grid-3 {
             grid-template-columns: 1fr;
             gap: 14px;
           }

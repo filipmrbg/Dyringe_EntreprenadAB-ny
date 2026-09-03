@@ -101,6 +101,18 @@ const images: SiteImages = {
 
   gallery: [
     {
+      url: '/gallery/dyringe-projekt-1.png',
+      alt: 'Dyringe Entreprenad AB stomresning och byggnation',
+    },
+    {
+      url: '/gallery/dyringe-projekt-2.png',
+      alt: 'Dyringe Entreprenad AB schaktning och poolgrävning med grävmaskin',
+    },
+    {
+      url: '/gallery/dyringe-projekt-3.png',
+      alt: 'Dyringe Entreprenad AB färdigställt pooldäck, altan och pooltak',
+    },
+    {
       url: '/gallery/gallery-1.jpg',
       alt: 'Dyringe Entreprenad AB markarbete och tomtplanering',
     },
