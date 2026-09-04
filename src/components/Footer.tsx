@@ -176,7 +176,7 @@ export default function Footer() {
           }}
         >
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', color: 'var(--color-gray-600)', fontSize: '0.875rem', flexWrap: 'wrap' }}>
-            <span>© 2026 - Dyringe Entreprenad AB</span>
+            <span>© 2026 Dyringe Entreprenad AB</span>
           </div>
         </div>
       </div>

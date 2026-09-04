@@ -55,7 +55,7 @@ Vi hjälper både privatpersoner, företag och fastighetsägare i Örebro med al
     faq: [
       {
         question: 'Hur snabbt kan ni påbörja ett grävarbete?',
-        answer: 'Mindre grävarbeten kan vi oftast påbörja inom 1–2 veckor beroende på säsong och maskinbokning.',
+        answer: 'Mindre grävarbeten kan vi oftast påbörja inom 1 till 2 veckor beroende på säsong och maskinbokning.',
       },
       {
         question: 'Utför ni dränering av befintliga husgrunder?',

@@ -54,7 +54,7 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.08rem', margin: '0 auto', maxWidth: '640px', lineHeight: 1.6 }}>
-                Professionell entreprenad och maskintjänster – från noggrann planering till färdigställt mark och byggprojekt i Örebro med omnejd.
+                Professionell entreprenad och maskintjänster från noggrann planering till färdigställt mark och byggprojekt i Örebro med omnejd.
               </p>
             </ScrollReveal>
           </div>
@@ -133,7 +133,7 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 16px 0',
                   }}>
-                    Vårt mål är enkelt: att leverera mark och byggprojekt med högsta tekniska kvalitet, god dialog och trygga garantier. Vi hanterar både mindre tomtjusteringar och större mark- och grundentreprenader med samma höga engagemang.
+                    Vårt mål är enkelt: att leverera mark och byggprojekt med högsta tekniska kvalitet, god dialog och trygga garantier. Vi hanterar både mindre tomtjusteringar och större mark och grundentreprenader med samma höga engagemang.
                   </p>
                   <p style={{
                     color: 'var(--color-gray-600)',
@@ -160,7 +160,7 @@ export default function About() {
                       lineHeight: 1.7,
                       margin: '0 0 10px 0',
                     }}>
-                      "Vi utför varje gräv-, mark- och byggprojekt med största yrkesstolthet och precision. Med personlig service, moderna maskiner och fasta priser ser vi till att ditt projekt genomförs tryggt och effektivt."
+                      "Vi utför varje gräv, mark och byggprojekt med största yrkesstolthet och precision. Med personlig service, moderna maskiner och fasta priser ser vi till att ditt projekt genomförs tryggt och effektivt."
                     </p>
                     <span style={{
                       color: 'var(--color-primary)',
@@ -168,7 +168,7 @@ export default function About() {
                       fontSize: '0.9rem',
                       display: 'block',
                     }}>
-                      Linus Eriksson – Dyringe Entreprenad AB
+                      Linus Eriksson, Dyringe Entreprenad AB
                     </span>
                   </div>
 

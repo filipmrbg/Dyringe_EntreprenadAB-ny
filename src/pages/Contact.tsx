@@ -18,7 +18,7 @@ const faqItems = [
   },
   {
     question: 'Hur lång tid tar det att få ett prisförslag?',
-    answer: 'Vi återkopplar vanligtvis inom 24 timmar och lämnar en tydlig, specificerad offert inom 1–3 arbetsdagar efter genomgång eller platsbesök.',
+    answer: 'Vi återkopplar vanligtvis inom 24 timmar och lämnar en tydlig, specificerad offert inom 1 till 3 arbetsdagar efter genomgång eller platsbesök.',
   },
   {
     question: 'Vilka områden är ert huvudsakliga upptagningsområde?',
