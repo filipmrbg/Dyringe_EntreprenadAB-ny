@@ -155,6 +155,29 @@ Deno.serve(async (req: Request) => {
 
     const submissionId = crypto.randomUUID();
     const dateTime = formatSwedishDateTime(new Date());
+    const source = typeof body.source === "string" && body.source.trim() === "quote" ? "quote" : "contact";
+
+    // Save submission to the database using the service role key
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, serviceRoleKey);
+
+    const { error: dbError } = await supabase
+      .from("contact_submissions")
+      .insert({
+        submission_id: submissionId,
+        name,
+        email,
+        phone,
+        service: service || null,
+        message,
+        source,
+      });
+
+    if (dbError) {
+      console.error("Database insert error:", dbError.message);
+    }
+
     const html = buildEmailHtml(name, email, phone, service || "Ej angiven", message, dateTime, submissionId);
 
     const resendApiKey = Deno.env.get("RESEND_API_KEY");

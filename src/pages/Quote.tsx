@@ -78,7 +78,7 @@ export default function Quote() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
           },
-          body: JSON.stringify({ name, email, phone, service, message }),
+          body: JSON.stringify({ name, email, phone, service, message, source: 'quote' }),
         },
       );
 
