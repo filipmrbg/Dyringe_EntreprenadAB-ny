@@ -90,7 +90,7 @@ const images: SiteImages = {
       alt: 'Betong och gjutning i Örebro',
     },
     ombyggnation: {
-      url: '/service-markarbete.png',
+      url: '/service-markarbete.webp',
       alt: 'Maskintjänster och entreprenad i Örebro',
     },
     totalentreprenad: {
