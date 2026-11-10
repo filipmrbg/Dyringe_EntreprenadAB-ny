@@ -41,7 +41,7 @@ export function usePageTitle(title: string, description?: string) {
       ? window.location.origin
       : 'https://dyringe-entreprenad.se';
     const absoluteUrl = `${origin}${pathname === '/' ? '' : pathname}`;
-    const ogImageUrl = `${origin}/og-image.png`;
+    const ogImageUrl = `https://dyringe-entreprenad.se/og-image.png`;
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
