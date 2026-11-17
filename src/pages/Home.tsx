@@ -442,7 +442,7 @@ export default function Home() {
                   }}>
                     {/* Architectural Service Icon */}
                     <div style={{ marginBottom: '16px' }}>
-                      <ServiceIcon type={svc.slug} color="#111111" size={38} />
+                      <ServiceIcon type={svc.slug} color="#c28447" size={38} />
                     </div>
 
                     <h3 style={{
