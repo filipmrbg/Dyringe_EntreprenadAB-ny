@@ -680,8 +680,9 @@ export default function Home() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       marginBottom: '20px',
+                      boxShadow: '0 10px 24px rgba(17, 17, 17, 0.16)',
                     }}>
-                      <Icon size={28} color="#1a1f2e" />
+                      <Icon size={28} color="#ffffff" />
                     </div>
                     <h3 style={{
                       color: 'var(--color-text-dark)',
