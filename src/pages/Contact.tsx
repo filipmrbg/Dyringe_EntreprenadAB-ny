@@ -48,7 +48,7 @@ const inputStyle: React.CSSProperties = {
 
 function focusInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
   e.currentTarget.style.borderColor = 'var(--color-primary)';
-  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(234, 88, 12, 0.15)';
+  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(17, 17, 17, 0.15)';
 }
 function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
   e.currentTarget.style.borderColor = '#e5e7eb';
@@ -172,7 +172,7 @@ export default function Contact() {
                     width: '48px',
                     height: '48px',
                     minWidth: '48px',
-                    background: 'rgba(234, 88, 12, 0.1)',
+                    background: 'rgba(17, 17, 17, 0.1)',
                     borderRadius: '12px',
                     display: 'flex',
                     alignItems: 'center',
@@ -202,7 +202,7 @@ export default function Contact() {
                     width: '48px',
                     height: '48px',
                     minWidth: '48px',
-                    background: 'rgba(234, 88, 12, 0.1)',
+                    background: 'rgba(17, 17, 17, 0.1)',
                     borderRadius: '12px',
                     display: 'flex',
                     alignItems: 'center',
@@ -225,7 +225,7 @@ export default function Contact() {
                     width: '48px',
                     height: '48px',
                     minWidth: '48px',
-                    background: 'rgba(234, 88, 12, 0.1)',
+                    background: 'rgba(17, 17, 17, 0.1)',
                     borderRadius: '12px',
                     display: 'flex',
                     alignItems: 'center',
@@ -404,7 +404,7 @@ export default function Contact() {
                       if (status === 'sending') return;
                       const el = e.currentTarget as HTMLElement;
                       el.style.transform = 'translateY(-2px)';
-                      el.style.boxShadow = '0 8px 24px rgba(234, 88, 12, 0.4)';
+                      el.style.boxShadow = '0 8px 24px rgba(17, 17, 17, 0.4)';
                     }}
                     onMouseLeave={e => {
                       const el = e.currentTarget as HTMLElement;

@@ -146,7 +146,7 @@ export default function About() {
 
                   {/* Founder Quote Card */}
                   <div style={{
-                    background: 'rgba(234, 88, 12, 0.06)',
+                    background: 'rgba(17, 17, 17, 0.06)',
                     borderLeft: '4px solid var(--color-primary)',
                     padding: '24px 28px',
                     borderRadius: '0 16px 16px 0',
@@ -232,7 +232,7 @@ export default function About() {
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-6px)';
                   e.currentTarget.style.boxShadow = '0 16px 36px rgba(0, 0, 0, 0.09)';
-                  e.currentTarget.style.borderColor = 'rgba(234, 88, 12, 0.3)';
+                  e.currentTarget.style.borderColor = 'rgba(17, 17, 17, 0.3)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
@@ -245,7 +245,7 @@ export default function About() {
                       width: '68px',
                       height: '68px',
                       borderRadius: '50%',
-                      background: i === 0 ? 'rgba(234, 88, 12, 0.12)' : 'rgba(15, 23, 42, 0.08)',
+                      background: i === 0 ? 'rgba(17, 17, 17, 0.12)' : 'rgba(15, 23, 42, 0.08)',
                       color: i === 0 ? 'var(--color-primary)' : 'var(--color-text-dark)',
                       display: 'flex',
                       alignItems: 'center',
@@ -253,7 +253,7 @@ export default function About() {
                       fontSize: '1.7rem',
                       fontWeight: 800,
                       margin: '0 auto 18px auto',
-                      border: i === 0 ? '2px solid rgba(234, 88, 12, 0.3)' : '2px solid rgba(15, 23, 42, 0.1)',
+                      border: i === 0 ? '2px solid rgba(17, 17, 17, 0.3)' : '2px solid rgba(15, 23, 42, 0.1)',
                     }}>
                       {member.initials}
                     </div>

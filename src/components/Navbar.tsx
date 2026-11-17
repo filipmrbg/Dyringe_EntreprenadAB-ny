@@ -334,10 +334,10 @@ export default function Navbar() {
                 transition: 'color 0.2s ease',
                 cursor: 'pointer',
               }}
-              onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
+              onMouseEnter={e => (e.currentTarget.style.color = '#cbd5e1')}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-white)')}
             >
-              <Phone size={14} color="var(--color-primary)" />
+              <Phone size={14} color="var(--color-white)" />
               <span>076-112 91 06</span>
             </a>
           </div>
@@ -348,6 +348,7 @@ export default function Navbar() {
             style={{
               background: 'var(--color-primary)',
               color: '#ffffff',
+              border: '1px solid rgba(255, 255, 255, 0.25)',
               fontFamily: 'var(--font-family)',
               fontWeight: 700,
               borderRadius: 'var(--border-radius-pill)',
@@ -357,19 +358,19 @@ export default function Navbar() {
               transition: 'all 0.3s ease',
               display: 'inline-block',
               cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(234, 88, 12, 0.35)',
+              boxShadow: '0 4px 16px rgba(17, 17, 17, 0.35)',
             }}
             onMouseEnter={e => {
               const el = e.currentTarget as HTMLElement;
               el.style.background = 'var(--color-primary-hover)';
               el.style.transform = 'translateY(-2px)';
-              el.style.boxShadow = '0 8px 24px rgba(234, 88, 12, 0.5)';
+              el.style.boxShadow = '0 8px 24px rgba(17, 17, 17, 0.5)';
             }}
             onMouseLeave={e => {
               const el = e.currentTarget as HTMLElement;
               el.style.background = 'var(--color-primary)';
               el.style.transform = 'translateY(0)';
-              el.style.boxShadow = '0 4px 16px rgba(234, 88, 12, 0.35)';
+              el.style.boxShadow = '0 4px 16px rgba(17, 17, 17, 0.35)';
             }}
           >
             <span className="offert-full">Begär offert</span>

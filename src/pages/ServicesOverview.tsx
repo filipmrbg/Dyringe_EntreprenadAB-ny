@@ -267,7 +267,7 @@ export default function ServicesOverview() {
                           padding: '14px 28px',
                           borderRadius: 'var(--border-radius-pill)',
                           textDecoration: 'none',
-                          boxShadow: '0 4px 14px rgba(234, 88, 12, 0.35)',
+                          boxShadow: '0 4px 14px rgba(17, 17, 17, 0.35)',
                           transition: 'all 0.25s ease',
                         }}
                         onMouseEnter={(e) => {

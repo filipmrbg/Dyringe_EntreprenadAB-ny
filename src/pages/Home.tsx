@@ -241,7 +241,7 @@ export default function Home() {
                 textShadow: '0 4px 18px rgba(0, 0, 0, 0.75)',
               }}>
                 <span style={{ color: '#ffffff', display: 'block' }}>DYRINGE</span>
-                <span style={{ color: 'var(--color-primary)', display: 'block', whiteSpace: 'nowrap' }}>ENTREPRENAD AB</span>
+                <span style={{ color: '#ffffff', display: 'block', whiteSpace: 'nowrap' }}>ENTREPRENAD AB</span>
               </h1>
             </ScrollReveal>
 
@@ -389,7 +389,7 @@ export default function Home() {
                     const card = e.currentTarget;
                     card.style.transform = 'translateY(-6px)';
                     card.style.boxShadow = '0 20px 40px rgba(15, 23, 42, 0.12)';
-                    card.style.borderColor = 'rgba(234, 88, 12, 0.3)';
+                    card.style.borderColor = 'rgba(17, 17, 17, 0.3)';
                     const img = card.querySelector('.card-photo') as HTMLElement;
                     if (img) img.style.transform = 'scale(1.05)';
                   }}
@@ -880,7 +880,7 @@ export default function Home() {
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse at 85% 25%, rgba(234, 88, 12, 0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 85% 25%, rgba(17, 17, 17, 0.08) 0%, transparent 60%)',
           pointerEvents: 'none',
         }} />
         <div style={{ ...container, position: 'relative', zIndex: 1 }}>

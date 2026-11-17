@@ -203,7 +203,7 @@ function PreviewCard({ def, globalTick }: CardProps) {
             transition: `opacity ${def.duration} ${def.easing}, transform ${def.duration} ${def.easing}, filter ${def.duration} ${def.easing}, clip-path ${def.duration} ${def.easing}`,
             willChange: 'opacity, transform, filter, clip-path',
           }}
-          className="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-xl shadow-xl px-8 py-6 text-center"
+          className="bg-gradient-to-br from-zinc-800 to-zinc-950 text-white rounded-xl shadow-xl px-8 py-6 text-center"
         >
           <div className="text-2xl font-bold tracking-tight">Dannes Bygg & Entreprenad AB</div>
           <div className="text-sm opacity-90 mt-1">Animation preview</div>
@@ -247,7 +247,7 @@ export default function Animations() {
           </p>
           <button
             onClick={playAll}
-            className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-full font-medium transition-colors shadow-lg shadow-orange-500/20"
+            className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 hover:bg-zinc-800 text-white rounded-full font-medium transition-colors shadow-lg shadow-zinc-900/20"
           >
             <Play size={16} />
             Spela upp alla
