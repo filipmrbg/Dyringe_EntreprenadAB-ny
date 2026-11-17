@@ -39,7 +39,7 @@ export function usePageTitle(title: string, description?: string) {
     // 5. Update Canonical Link & Absolute URL
     const origin = typeof window !== 'undefined' && window.location.origin.startsWith('http')
       ? window.location.origin
-      : 'https://dyringe-entreprenad.se';
+      : 'https://dyringeentreprenad.se';
     const absoluteUrl = `${origin}${pathname === '/' ? '' : pathname}`;
     const ogImageUrl = `https://dyringe-entreprenad.se/og-image.png`;
 

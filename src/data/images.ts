@@ -71,7 +71,7 @@ const images: SiteImages = {
 
   hero: {
     background: {
-      url: '/hero-main.webp',
+      url: '/service-gravning.webp',
       alt: 'Dyringe Entreprenad AB grävning, byggnation och betong Örebro',
     },
   },
@@ -140,11 +140,11 @@ const images: SiteImages = {
 
   cta: {
     banner: {
-      url: '/hero-main.webp',
+      url: '/service-gravning.webp',
       alt: 'Dyringe Entreprenad AB projekt',
     },
     midSection: {
-      url: '/hero-main.webp',
+      url: '/service-gravning.webp',
       alt: 'Dyringe Entreprenad AB arbetsplats Örebro',
     },
   },
@@ -232,7 +232,7 @@ const images: SiteImages = {
         alt: 'Förberedelse för tomtplanering',
       },
       section2: {
-        url: '/hero-main.webp',
+        url: '/service-gravning.webp',
         alt: 'Arbetsplats Örebro',
       },
     },
@@ -246,7 +246,7 @@ const images: SiteImages = {
         alt: 'Fuktskydd och dräneringsarbete',
       },
       section2: {
-        url: '/hero-main.webp',
+        url: '/service-gravning.webp',
         alt: 'Dräneringsarbete',
       },
     },
@@ -260,7 +260,7 @@ const images: SiteImages = {
         alt: 'Armering och betonggjutning',
       },
       section2: {
-        url: '/hero-main.webp',
+        url: '/service-gravning.webp',
         alt: 'Färdig betonggrund',
       },
     },
