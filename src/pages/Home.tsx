@@ -269,7 +269,7 @@ export default function Home() {
                 gap: '16px',
                 flexWrap: 'wrap',
               }}>
-                <Button variant="primary" size="lg" href="/offert">
+                <Button variant="light" size="lg" href="/offert">
                   Begär kostnadsfri offert
                 </Button>
 
@@ -442,7 +442,7 @@ export default function Home() {
                   }}>
                     {/* Architectural Service Icon */}
                     <div style={{ marginBottom: '16px' }}>
-                      <ServiceIcon type={svc.slug} color="#c28447" size={38} />
+                      <ServiceIcon type={svc.slug} color="#111111" size={38} />
                     </div>
 
                     <h3 style={{
@@ -750,7 +750,7 @@ export default function Home() {
             }}>
               Vi skickar en kostnadsfri offert inom 24 timmar.
             </p>
-            <Button variant="primary" size="lg" href="/offert">
+            <Button variant="light" size="lg" href="/offert">
               Begär offert
             </Button>
           </ScrollReveal>
@@ -880,7 +880,7 @@ export default function Home() {
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse at 85% 25%, rgba(17, 17, 17, 0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 85% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 60%)',
           pointerEvents: 'none',
         }} />
         <div style={{ ...container, position: 'relative', zIndex: 1 }}>
@@ -935,7 +935,7 @@ export default function Home() {
         }
         .spaced-tile:hover {
           transform: translateY(-6px);
-          border-color: rgba(217, 119, 6, 0.45);
+          border-color: rgba(255, 255, 255, 0.35);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
         }
         .spaced-tile:hover .spaced-tile-img {
@@ -977,7 +977,7 @@ export default function Home() {
           transition: color 0.3s ease;
         }
         .spaced-tile:hover .spaced-tile-action {
-          color: var(--color-primary);
+          color: #ffffff;
         }
 
         .steps-grid-wrapper {

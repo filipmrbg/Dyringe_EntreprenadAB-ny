@@ -157,7 +157,7 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
           <ScrollReveal animation="fade-left" duration={0.8}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <span style={{
-                color: 'var(--color-primary)',
+                color: '#cbd5e1',
                 fontSize: '0.85rem',
                 fontWeight: 700,
                 letterSpacing: '2.5px',
@@ -191,7 +191,7 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
               }}>
                 {checkItems.map((item, i) => (
                   <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <CheckCircle size={20} style={{ color: 'var(--color-primary)', flexShrink: 0 }} />
+                    <CheckCircle size={20} style={{ color: '#ffffff', flexShrink: 0 }} />
                     <span style={{
                       color: 'rgba(255, 255, 255, 0.88)',
                       fontFamily: 'var(--font-family)',
@@ -206,7 +206,7 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
               </ul>
 
               <div className="cta-btn-wrap" style={{ display: 'inline-block' }}>
-                <Button variant="primary" size="lg" href="/offert">
+                <Button variant="light" size="lg" href="/offert">
                   Kom igång
                 </Button>
               </div>

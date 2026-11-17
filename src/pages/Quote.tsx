@@ -128,7 +128,7 @@ export default function Quote() {
               </h1>
             </ScrollReveal>
             <ScrollReveal animation="scale-x-center" delay={150} duration={0.6}>
-              <span style={{ display: 'block', width: '60px', height: '3px', background: 'var(--color-primary)', borderRadius: '2px', margin: '14px auto 0' }} />
+              <span style={{ display: 'block', width: '60px', height: '3px', background: '#ffffff', borderRadius: '2px', margin: '14px auto 0' }} />
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={200}>
               <p style={{

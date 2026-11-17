@@ -197,10 +197,10 @@ export default function Navbar() {
                   <button
                     onClick={() => handleNavClick(link.href)}
                     style={{
-                      background: active || isServicesOpen ? 'rgba(255,255,255,0.1)' : 'none',
+                      background: active || isServicesOpen ? 'rgba(255,255,255,0.14)' : 'none',
                       border: 'none',
                       cursor: 'pointer',
-                      color: active || isServicesOpen ? 'var(--color-primary)' : 'var(--color-white)',
+                      color: active || isServicesOpen ? '#ffffff' : 'rgba(255,255,255,0.85)',
                       fontFamily: 'var(--font-family)',
                       fontSize: '0.9rem',
                       fontWeight: active || isServicesOpen ? 600 : 400,
@@ -269,8 +269,8 @@ export default function Navbar() {
                         }}
                         onMouseEnter={e => {
                           const el = e.currentTarget as HTMLElement;
-                          el.style.background = 'rgba(255, 255, 255, 0.08)';
-                          el.style.color = 'var(--color-primary)';
+                          el.style.background = 'rgba(255, 255, 255, 0.1)';
+                          el.style.color = '#ffffff';
                         }}
                         onMouseLeave={e => {
                           const el = e.currentTarget as HTMLElement;
@@ -291,10 +291,10 @@ export default function Navbar() {
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 style={{
-                  background: active ? 'rgba(255,255,255,0.1)' : 'none',
+                  background: active ? 'rgba(255,255,255,0.14)' : 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  color: active ? 'var(--color-primary)' : 'var(--color-white)',
+                  color: active ? '#ffffff' : 'rgba(255,255,255,0.85)',
                   fontFamily: 'var(--font-family)',
                   fontSize: '0.9rem',
                   fontWeight: active ? 600 : 400,
@@ -346,9 +346,9 @@ export default function Navbar() {
             to="/offert"
             className="offert-btn"
             style={{
-              background: 'var(--color-primary)',
-              color: '#ffffff',
-              border: '1px solid rgba(255, 255, 255, 0.25)',
+              background: '#ffffff',
+              color: '#0f172a',
+              border: '1px solid rgba(255, 255, 255, 0.9)',
               fontFamily: 'var(--font-family)',
               fontWeight: 700,
               borderRadius: 'var(--border-radius-pill)',
@@ -358,19 +358,19 @@ export default function Navbar() {
               transition: 'all 0.3s ease',
               display: 'inline-block',
               cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(17, 17, 17, 0.35)',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
             }}
             onMouseEnter={e => {
               const el = e.currentTarget as HTMLElement;
-              el.style.background = 'var(--color-primary-hover)';
+              el.style.background = '#f1f5f9';
               el.style.transform = 'translateY(-2px)';
-              el.style.boxShadow = '0 8px 24px rgba(17, 17, 17, 0.5)';
+              el.style.boxShadow = '0 8px 24px rgba(255, 255, 255, 0.25)';
             }}
             onMouseLeave={e => {
               const el = e.currentTarget as HTMLElement;
-              el.style.background = 'var(--color-primary)';
+              el.style.background = '#ffffff';
               el.style.transform = 'translateY(0)';
-              el.style.boxShadow = '0 4px 16px rgba(17, 17, 17, 0.35)';
+              el.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.25)';
             }}
           >
             <span className="offert-full">Begär offert</span>
@@ -475,7 +475,7 @@ export default function Navbar() {
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                color: active ? 'var(--color-primary)' : 'var(--color-white)',
+                color: active ? '#ffffff' : 'rgba(255, 255, 255, 0.78)',
                 fontFamily: 'var(--font-family)',
                 fontSize: '1.3rem',
                 fontWeight: active ? 700 : 500,
@@ -487,8 +487,8 @@ export default function Navbar() {
                 transition: 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease',
                 transitionDelay: mobileOpen ? `${delay}ms, ${delay}ms, 0ms` : '0ms',
               }}
-              onMouseEnter={e => { if (!active) (e.currentTarget as HTMLElement).style.color = 'var(--color-primary)'; }}
-              onMouseLeave={e => { if (!active) (e.currentTarget as HTMLElement).style.color = 'var(--color-white)'; }}
+              onMouseEnter={e => { if (!active) (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
+              onMouseLeave={e => { if (!active) (e.currentTarget as HTMLElement).style.color = 'rgba(255, 255, 255, 0.78)'; }}
             >
               {link.label}
             </button>
@@ -500,8 +500,8 @@ export default function Navbar() {
           onClick={() => setMobileOpen(false)}
           style={{
             marginTop: '12px',
-            background: 'var(--color-primary)',
-            color: '#ffffff',
+            background: '#ffffff',
+            color: '#0f172a',
             fontFamily: 'var(--font-family)',
             fontWeight: 700,
             borderRadius: 'var(--border-radius-pill)',
@@ -534,7 +534,7 @@ export default function Navbar() {
           </span>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
             <a href="tel:0761129106" style={{ color: 'var(--color-white)', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-              <Phone size={14} color="var(--color-primary)" /> 076-112 91 06
+              <Phone size={14} color="#ffffff" /> 076-112 91 06
             </a>
           </div>
         </div>
